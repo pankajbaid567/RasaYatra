@@ -21,8 +21,8 @@ const Header = () => {
       >
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Recipes</a></li>
-          <li><a href="#">Ingredients</a></li>
+          <li><a href="#">Explore</a></li>
+          <li><a href="#">Featured</a></li>
           <li><a href="#">About</a></li>
         </ul>
       </motion.nav>

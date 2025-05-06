@@ -1,16 +1,20 @@
+/**
+ * @typedef {Object} Region
+ * @property {string} id - Unique identifier for the region
+ * @property {string} name - Display name of the region
+ * @property {string[]} states - States included in this region
+ * @property {string} description - Description of the region's cuisine
+ * @property {string[]} famousDishes - Notable dishes from the region
+ * @property {string[]} keyIngredients - Essential ingredients in regional cooking
+ * @property {string[]} culinaryInfluences - Cultures that influenced the regional cuisine
+ * @property {string} imageUrl - URL to an image representing the region
+ */
 
-export interface Region {
-  id: string;
-  name: string;
-  states: string[];
-  description: string;
-  famousDishes: string[];
-  keyIngredients: string[];
-  culinaryInfluences: string[];
-  imageUrl: string;
-}
-
-export const regions: Region[] = [
+/**
+ * Array of all culinary regions in India
+ * @type {Region[]}
+ */
+export const regions = [
   {
     id: "north-india",
     name: "North India",
@@ -63,18 +67,29 @@ export const regions: Region[] = [
   }
 ];
 
-// Helper function to get a region by ID
-export const getRegionById = (id: string): Region | undefined => {
+/**
+ * Get a region by its ID
+ * @param {string} id - The region ID to search for
+ * @returns {Region|undefined} The region object if found, undefined otherwise
+ */
+export const getRegionById = (id) => {
   return regions.find(region => region.id === id);
 };
 
-// Helper function to get all region names
-export const getAllRegionNames = (): string[] => {
+/**
+ * Get all region names
+ * @returns {string[]} Array of all region names
+ */
+export const getAllRegionNames = () => {
   return regions.map(region => region.name);
 };
 
-// Helper function to get states by region
-export const getStatesByRegion = (regionId: string): string[] => {
+/**
+ * Get all states within a specific region
+ * @param {string} regionId - The ID of the region
+ * @returns {string[]} Array of state names
+ */
+export const getStatesByRegion = (regionId) => {
   const region = regions.find(r => r.id === regionId);
   return region ? region.states : [];
 };
