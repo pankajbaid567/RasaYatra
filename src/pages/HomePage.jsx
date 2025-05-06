@@ -43,7 +43,7 @@ const HomePage = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <img 
-                src="https://placehold.co/600x400/FFF8E1/E65100?text=Indian+Cuisine" 
+                src="images/hero-food.avif" 
                 alt="Indian cuisine" 
                 className="hero-image" 
               />
@@ -113,7 +113,7 @@ const HomePage = () => {
               </Link>
             </div>
             <div className="map-image-container">
-              <img src="https://placehold.co/600x600/FFF8E1/E65100?text=India+Map" alt="Map of India" className="map-image" />
+              <img src="images/bharat-map.png" alt="Map of India" className="map-image" />
             </div>
           </motion.div>
         </div>
