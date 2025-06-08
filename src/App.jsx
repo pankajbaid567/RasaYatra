@@ -1,13 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import RecipeExplorer from './pages/RecipeExplorer';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-// import RecipeDetail from './components/recipes/RecipeDetail';
-// import RecipeExplorer from './components/recipes/RecipeExplorer';
-// import RegionExplorer from './components/regions/RegionExplorer';
-// import NotFound from './components/layout/NotFound';
-// import LoadingScreen from './components/layout/LoadingScreen';
+import RegionExplorer from './pages/RegionExplorer';
+import RecipeDetail from './pages/RecipeDetail';
 import './App.css';
 
 function App() {
@@ -33,10 +32,11 @@ function App() {
         <main className="main-content">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            {/* <Route path="/recipes" element={<RecipeExplorer />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/recipes" element={<RecipeExplorer />} />
             <Route path="/recipes/:recipeId" element={<RecipeDetail />} />
-            <Route path="/regions/:regionId" element={<RegionExplorer />} />
-            <Route path="*" element={<NotFound />} /> */}
+            <Route path="/regions" element={<RegionExplorer />} />
+            {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
         </main>
         <Footer />

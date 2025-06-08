@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Header = () => {
@@ -9,8 +10,10 @@ const Header = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="logo">RasaYatra</h1>
-        <p className="tagline">A Journey Through Indian Cuisine</p>
+        <Link to="/" className="logo-link">
+          <h1 className="logo">RasaYatra</h1>
+          <p className="tagline">A Journey Through Indian Cuisine</p>
+        </Link>
       </motion.div>
       
       <motion.nav 
@@ -20,10 +23,10 @@ const Header = () => {
         transition={{ duration: 0.5 }}
       >
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Explore</a></li>
-          <li><a href="#">Featured</a></li>
-          <li><a href="#">About</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/recipes">Explore</Link></li>
+          <li><Link to="/regions">Regions</Link></li>
+          <li><Link to="/about">About</Link></li>
         </ul>
       </motion.nav>
     </header>

@@ -39,6 +39,15 @@ html{
   flex-direction: column;
 }
 
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-link:hover {
+  color: inherit;
+}
+
 .logo {
   margin: 0;
   font-family: 'Kalam', cursive;
