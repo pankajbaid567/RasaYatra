@@ -43,7 +43,7 @@ const HomePage = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <img 
-                src="images/hero-food.avif" 
+                src="images/hero-food.jpeg" 
                 alt="Indian cuisine" 
                 className="hero-image" 
               />

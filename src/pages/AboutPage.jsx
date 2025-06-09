@@ -65,7 +65,7 @@ const AboutPage = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <img src="images/indian-spices.jpg" alt="Indian spices and ingredients" />
+              <img src="images/indian-spices.webp" alt="Indian spices and ingredients" />
             </motion.div>
           </div>
         </div>
@@ -83,35 +83,39 @@ const AboutPage = () => {
             <h2 className="section-title">The Journey Begins</h2>
             <div className="story-grid">
               <div className="story-item">
-                <div className="story-year">2020</div>
-                <h3>The Idea</h3>
-                <p>
-                  During the pandemic, we realized how disconnected people had become from 
-                  their culinary roots. RasaYatra was born from the desire to bridge this gap.
-                </p>
-              </div>
-              <div className="story-item">
-                <div className="story-year">2021</div>
-                <h3>Research & Development</h3>
-                <p>
-                  We spent months traveling across India, documenting traditional recipes 
-                  and learning from local cooks and grandmothers.
-                </p>
-              </div>
-              <div className="story-item">
                 <div className="story-year">2022</div>
-                <h3>Building the Platform</h3>
+                <h3>The Vision</h3>
                 <p>
-                  With over 500 authentic recipes collected, we began building the digital 
-                  platform to share these culinary treasures.
+                  Inspired by the growing interest in authentic regional cuisines post-pandemic, 
+                  we envisioned a platform that would make traditional Indian recipes accessible 
+                  to the modern digital generation.
                 </p>
               </div>
               <div className="story-item">
                 <div className="story-year">2023</div>
-                <h3>Community Growth</h3>
+                <h3>Deep Dive Research</h3>
                 <p>
-                  Today, RasaYatra serves thousands of food enthusiasts worldwide, 
-                  preserving culinary heritage one recipe at a time.
+                  We embarked on an extensive journey across India's 28 states, collecting 
+                  over 800 authentic recipes from home cooks, street vendors, and heritage kitchens, 
+                  documenting their stories and techniques.
+                </p>
+              </div>
+              <div className="story-item">
+                <div className="story-year">2024</div>
+                <h3>Platform Development</h3>
+                <p>
+                  With our comprehensive recipe database and cultural insights, we built 
+                  RasaYatra using cutting-edge technology to create an immersive culinary 
+                  experience that honors tradition while embracing innovation.
+                </p>
+              </div>
+              <div className="story-item">
+                <div className="story-year">2025</div>
+                <h3>Launch & Community</h3>
+                <p>
+                  This spring, RasaYatra officially launched, already connecting thousands 
+                  of food enthusiasts globally. We're building a vibrant community that 
+                  celebrates India's culinary diversity and preserves it for future generations.
                 </p>
               </div>
             </div>
