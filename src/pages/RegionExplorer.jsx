@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { MapPin, ChefHat, Utensils, Star, ArrowRight } from 'lucide-react';
 import { regions } from '../data/regions';
 import { getAllRecipes } from '../data/recipes';
+import ChatBot from '../components/ChatBot';
 import '../styles/pages/RegionExplorer.css';
 
 const RegionExplorer = () => {
@@ -218,6 +219,8 @@ const RegionExplorer = () => {
           </motion.div>
         </div>
       </section>
+      
+      <ChatBot pageContext="regions" />
     </div>
   );
 };

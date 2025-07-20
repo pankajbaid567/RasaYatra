@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Search, Filter, Clock, Star, ChefHat, MapPin } from 'lucide-react';
 import { getAllRecipes } from '../data/recipes';
+import ChatBot from '../components/ChatBot';
 import '../styles/pages/RecipeExplorer.css';
 
 const RecipeExplorer = () => {
@@ -251,6 +252,8 @@ const RecipeExplorer = () => {
           )}
         </div>
       </section>
+      
+      <ChatBot pageContext="recipes" />
     </div>
   );
 };

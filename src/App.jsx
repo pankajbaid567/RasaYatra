@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
@@ -8,39 +8,58 @@ import Footer from './components/layout/Footer';
 import RegionExplorer from './pages/RegionExplorer';
 import RecipeDetail from './pages/RecipeDetail';
 import './App.css';
+import ChatBot from './components/ChatBot';
 
-function App() {
-  // const [loading, setLoading] = useState(false);
-
-  // useEffect(() => {
-  //   // Simulate initial loading
-  //   const timer = setTimeout(() => {
-  //     setLoading(false);
-  //   }, 1500);
+// Content component that has access to location
+const AppContent = () => {
+  const location = useLocation();
+  const [currentPath, setCurrentPath] = useState('/');
+  const [recipeId, setRecipeId] = useState(null);
+  
+  useEffect(() => {
+    setCurrentPath(location.pathname);
     
-  //   return () => clearTimeout(timer);
-  // }, []);
+    // Extract recipe ID if we're on a recipe detail page
+    if (location.pathname.startsWith('/recipes/')) {
+      setRecipeId(location.pathname.split('/').pop());
+    } else {
+      setRecipeId(null);
+    }
+  }, [location]);
 
-  // if (loading) {
-  //   return 0;
-  // }
+  // Determine the ChatBot context based on the current route
+  const getChatBotContext = () => {
+    if (currentPath === '/') return 'home';
+    if (currentPath === '/about') return 'about';
+    if (currentPath === '/recipes') return 'recipes';
+    if (currentPath === '/regions') return 'regions';
+    if (currentPath.startsWith('/recipes/') && recipeId) return `recipe-detail:${recipeId}`;
+    return 'general';
+  };
 
   return (
+    <div className="app-container">
+      <Header />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/recipes" element={<RecipeExplorer />} />
+          <Route path="/recipes/:recipeId" element={<RecipeDetail />} />
+          <Route path="/regions" element={<RegionExplorer />} />
+          {/* <Route path="*" element={<NotFound />} /> */}
+        </Routes>
+      </main>
+      <Footer />
+      <ChatBot pageContext={getChatBotContext()} />
+    </div>
+  );
+};
+
+function App() {
+  return (
     <Router>
-      <div className="app-container">
-        <Header />
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/recipes" element={<RecipeExplorer />} />
-            <Route path="/recipes/:recipeId" element={<RecipeDetail />} />
-            <Route path="/regions" element={<RegionExplorer />} />
-            {/* <Route path="*" element={<NotFound />} /> */}
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <AppContent />
     </Router>
   );
 }

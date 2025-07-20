@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Users, Globe, Award } from 'lucide-react';
+import ChatBot from '../components/ChatBot';
 import '../styles/pages/AboutPage.css';
 
 const AboutPage = () => {
@@ -196,6 +197,8 @@ const AboutPage = () => {
           </motion.div>
         </div>
       </section>
+      
+      <ChatBot pageContext="about" />
     </div>
   );
 };

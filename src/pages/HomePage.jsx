@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Map } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getFeaturedRecipes, getSeasonalRecipes } from '../data/recipes';
+import ChatBot from '../components/ChatBot';
 import '../styles/pages/HomePage.css';
 import React from 'react';
 
@@ -152,6 +153,8 @@ const HomePage = () => {
           </div>
         </section>
       )}
+      
+      <ChatBot pageContext="home" />
     </div>
   );
 };

@@ -14,6 +14,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { getRecipeById, getAllRecipes } from '../data/recipes';
+import ChatBot from '../components/ChatBot';
 import '../styles/pages/RecipeDetail.css';
 
 const RecipeDetail = () => {
@@ -314,6 +315,8 @@ const RecipeDetail = () => {
           </div>
         </section>
       )}
+      
+      <ChatBot pageContext="recipe-detail" />
     </div>
   );
 };
