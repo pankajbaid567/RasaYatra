@@ -208,6 +208,661 @@ export const getFeaturedRecipes = () => {
 const getAdditionalRecipes = () => {
   return [
     {
+      id: 'bajra-khichdi',
+      title: 'Bajra Khichdi',
+      description: 'Nutritious pearl millet and lentil porridge popular in Rajasthan.',
+      region: 'Rajasthan',
+      prepTime: 15,
+      cookTime: 30,
+      rating: 4.6,
+      difficulty: 'Easy',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Bajra+Khichdi',
+      ingredients: [
+        '1 cup bajra (pearl millet)',
+        '1/2 cup moong dal (split green gram)',
+        '1 onion, finely chopped',
+        '1 tomato, chopped',
+        '1 tsp cumin seeds',
+        '1 tsp ginger-garlic paste',
+        '2 green chilies, chopped',
+        '1/2 tsp turmeric powder',
+        '1 tsp red chili powder',
+        '1/2 tsp garam masala',
+        '2 tbsp ghee',
+        'Salt to taste',
+        'Fresh coriander for garnish'
+      ],
+      instructions: [
+        'Wash and soak bajra for 2-3 hours. Drain.',
+        'Wash and soak moong dal for 30 minutes.',
+        'Heat ghee in a pressure cooker and add cumin seeds.',
+        'Add chopped onions and sauté until golden.',
+        'Add ginger-garlic paste and green chilies. Cook for 1 minute.',
+        'Add tomatoes and all spices. Cook until tomatoes soften.',
+        'Add bajra and moong dal with 3 cups of water.',
+        'Pressure cook for 3-4 whistles or until soft.',
+        'Garnish with coriander and serve hot with ghee.'
+      ],
+      culturalStory: "Bajra Khichdi is a staple in Rajasthan, perfectly adapted to the arid climate where bajra grows abundantly. This protein-rich dish provides sustenance to desert communities and is traditionally served with ghee and buttermilk. During winters, it's considered especially nourishing and warming for the body."
+    },
+    {
+      id: 'panchmel-dal',
+      title: 'Panchmel Dal',
+      description: 'A flavorful blend of five lentils, a Rajasthani specialty.',
+      region: 'Rajasthan',
+      prepTime: 20,
+      cookTime: 40,
+      rating: 4.7,
+      difficulty: 'Medium',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Panchmel+Dal',
+      ingredients: [
+        '1/4 cup moong dal (split green gram)',
+        '1/4 cup urad dal (split black gram)',
+        '1/4 cup chana dal (split Bengal gram)',
+        '1/4 cup toor dal (split pigeon peas)',
+        '1/4 cup masoor dal (red lentils)',
+        '1 onion, finely chopped',
+        '2 tomatoes, chopped',
+        '1 tbsp ginger-garlic paste',
+        '2 green chilies, slit',
+        '1 tsp cumin seeds',
+        '1/2 tsp asafoetida (hing)',
+        '1 tsp red chili powder',
+        '1/2 tsp turmeric powder',
+        '1 tsp garam masala',
+        '3 tbsp ghee',
+        'Salt to taste',
+        'Fresh coriander and lemon wedges for garnish'
+      ],
+      instructions: [
+        'Wash and soak all dals together for 1 hour. Drain.',
+        'Pressure cook dals with turmeric and salt until soft.',
+        'Heat ghee in a pan and add cumin seeds and asafoetida.',
+        'Add chopped onions and sauté until golden brown.',
+        'Add ginger-garlic paste and green chilies. Cook for 2 minutes.',
+        'Add tomatoes and spices. Cook until oil separates.',
+        'Add cooked dal and simmer for 10 minutes.',
+        'Garnish with coriander and serve hot with lemon wedges.'
+      ],
+      culturalStory: "Panchmel Dal symbolizes Rajasthani resourcefulness, combining five protein-rich lentils into a hearty dish that sustains desert dwellers through harsh conditions. It's traditionally prepared during festivals and special occasions as an offering to deities before being served to guests. The dish showcases the region's knack for creating nutritionally complete meals with limited resources."
+    },
+    {
+      id: 'ker-sangri',
+      title: 'Ker Sangri',
+      description: 'Traditional Rajasthani dish made with desert beans and berries.',
+      region: 'Rajasthan',
+      prepTime: 30,
+      cookTime: 45,
+      rating: 4.8,
+      difficulty: 'Medium',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Ker+Sangri',
+      ingredients: [
+        '1 cup dried ker (desert berries)',
+        '1 cup dried sangri (desert beans)',
+        '2 tbsp oil',
+        '1 tsp cumin seeds',
+        '1/2 tsp asafoetida (hing)',
+        '1 tsp red chili powder',
+        '1 tsp coriander powder',
+        '1/2 tsp turmeric powder',
+        '1 tsp amchur (dried mango powder)',
+        '2 tsp fennel seeds',
+        'Salt to taste',
+        '1 tbsp jaggery (optional)',
+      ],
+      instructions: [
+        'Soak ker and sangri overnight in water. Rinse thoroughly.',
+        'Boil ker and sangri with salt for 15-20 minutes. Drain.',
+        'Heat oil in a pan and add cumin seeds and asafoetida.',
+        'Add all spice powders and sauté for 30 seconds.',
+        'Add boiled ker and sangri and mix well.',
+        'Add salt and jaggery. Cook on low flame for 10-15 minutes.',
+        'Serve hot with bajra roti.'
+      ],
+      culturalStory: "Ker Sangri is the epitome of desert survival cuisine. These beans and berries grow abundantly in Rajasthan's Thar Desert even during severe droughts when other crops fail. Traditionally, they're sun-dried and stored for years, providing sustenance during famines. Despite its humble origins, this dish is now served at luxury hotels and heritage restaurants as an authentic taste of Rajasthan's resilient culinary tradition."
+    },
+    {
+      id: 'mirchi-ka-kutta',
+      title: 'Mirchi Ka Kutta',
+      description: 'Spicy mashed green chilies tempered with garlic and spices.',
+      region: 'Rajasthan',
+      prepTime: 15,
+      cookTime: 20,
+      rating: 4.5,
+      difficulty: 'Medium',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Mirchi+Ka+Kutta',
+      ingredients: [
+        '15-20 green chilies',
+        '2 tbsp oil',
+        '1/2 tsp cumin seeds',
+        '1/2 tsp mustard seeds',
+        '8-10 garlic cloves, minced',
+        '1/2 tsp turmeric powder',
+        '1 tsp coriander powder',
+        '1/2 tsp red chili powder',
+        'Salt to taste',
+        '1 tbsp lemon juice'
+      ],
+      instructions: [
+        'Roast green chilies on direct flame until skin blisters.',
+        'Peel off the skin and remove stems.',
+        'Mash chilies coarsely (wear gloves).',
+        'Heat oil and add cumin and mustard seeds.',
+        'Add minced garlic and sauté until golden.',
+        'Add all spice powders and sauté for 30 seconds.',
+        'Add mashed chilies and salt. Mix well.',
+        'Cook for 5-7 minutes on low flame.',
+        'Add lemon juice and serve with bajra roti.'
+      ],
+      culturalStory: "Mirchi Ka Kutta showcases Rajasthani cuisine's bold approach to spices. Despite the desert heat, spicy foods are popular as they induce sweating, which provides natural cooling. This fiery side dish is a favorite in Marwari households, where it's believed to stimulate appetite and aid digestion. It's traditionally prepared on clay stoves, imparting a smoky flavor that complements the heat."
+    },
+    {
+      id: 'garlic-chutney',
+      title: 'Rajasthani Garlic Chutney',
+      description: 'Spicy garlic chutney with red chilies, a perfect accompaniment to Rajasthani meals.',
+      region: 'Rajasthan',
+      prepTime: 10,
+      cookTime: 5,
+      rating: 4.7,
+      difficulty: 'Easy',
+      servings: 6,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Garlic+Chutney',
+      ingredients: [
+        '30-40 garlic cloves',
+        '10-12 dried red chilies',
+        '1 tsp cumin seeds',
+        '1/2 tsp asafoetida (hing)',
+        '1 tbsp oil',
+        'Salt to taste'
+      ],
+      instructions: [
+        'Peel garlic cloves.',
+        'Dry roast red chilies and cumin seeds until fragrant.',
+        'Heat oil in a small pan and add asafoetida.',
+        'Grind roasted chilies, cumin, garlic, asafoetida, and salt to a coarse paste.',
+        'Add the tempering oil and mix well.',
+        'Store in an airtight container and serve with traditional Rajasthani meals.'
+      ],
+      culturalStory: "This potent garlic chutney is a staple in Rajasthani homes, where it's valued not just for flavor but also for its preservative and medicinal properties. In the desert climate, garlic helps combat various ailments and builds immunity. The chutney is traditionally stored in earthen pots, which enhance its flavor over time. It's an essential accompaniment to Dal Baati Churma and other regional specialties."
+    },
+    {
+      id: 'gond-ke-laddu',
+      title: 'Gond Ke Laddu',
+      description: 'Nutritious and warming sweet balls made with edible gum.',
+      region: 'Rajasthan',
+      prepTime: 20,
+      cookTime: 30,
+      rating: 4.9,
+      difficulty: 'Medium',
+      servings: 15,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Gond+Ke+Laddu',
+      ingredients: [
+        '200g edible gum (gond)',
+        '200g ghee',
+        '250g whole wheat flour',
+        '200g powdered jaggery',
+        '100g chopped nuts (almonds, cashews, pistachios)',
+        '1 tsp cardamom powder',
+        '1 tbsp poppy seeds',
+        '1 tbsp dried ginger powder'
+      ],
+      instructions: [
+        'Heat ghee in a pan and deep fry gond until it puffs up. Crush coarsely.',
+        'In the same ghee, roast wheat flour until golden brown and aromatic.',
+        'Add powdered jaggery, fried gond, nuts, and all spices.',
+        'Mix well and let it cool slightly until you can handle it.',
+        'While still warm, shape into lemon-sized balls.',
+        'Let cool completely and store in an airtight container.'
+      ],
+      culturalStory: "Gond Ke Laddu are specially prepared in winter months for their warming properties. In Rajasthan's royal households, these laddus were traditionally given to new mothers for strength and lactation support. The edible gum is believed to strengthen bones and joints, making these sweets both medicinal and delicious. They're commonly prepared during the festival of Makar Sankranti and shared as auspicious gifts."
+    },
+    {
+      id: 'papad-ki-sabzi',
+      title: 'Papad Ki Sabzi',
+      description: 'Unique curry made with papadums, a Rajasthani innovation.',
+      region: 'Rajasthan',
+      prepTime: 15,
+      cookTime: 20,
+      rating: 4.6,
+      difficulty: 'Easy',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Papad+Ki+Sabzi',
+      ingredients: [
+        '6-8 large papadums',
+        '2 tbsp yogurt',
+        '2 tbsp besan (gram flour)',
+        '1 tsp red chili powder',
+        '1/2 tsp turmeric powder',
+        '1 tsp coriander powder',
+        '1 tsp cumin seeds',
+        '2 dried red chilies',
+        '2 tbsp oil',
+        'Salt to taste',
+        'Fresh coriander for garnish'
+      ],
+      instructions: [
+        'Roast papadums and break into bite-sized pieces.',
+        'Mix yogurt, besan, and all spice powders with 2 cups water.',
+        'Heat oil in a pan and add cumin seeds and dried red chilies.',
+        'Pour the yogurt-besan mixture and bring to a boil.',
+        'Simmer for 5 minutes until slightly thickened.',
+        'Add papadum pieces just before serving.',
+        'Garnish with fresh coriander and serve hot.'
+      ],
+      culturalStory: "Papad Ki Sabzi was born from the resourcefulness of desert dwellers who transformed a simple accompaniment—papadums—into a main dish. It exemplifies Rajasthani cuisine's adaptability in a region where fresh vegetables were often scarce. Originally a fasting food during religious occasions, it's now enjoyed year-round. The dish cleverly uses besan (gram flour) to add protein and thickness to what would otherwise be a simple curry."
+    },
+    {
+      id: 'kanji-vada',
+      title: 'Kanji Vada',
+      description: 'Fermented mustard water with spicy lentil dumplings.',
+      region: 'Rajasthan',
+      prepTime: 20,
+      cookTime: 15,
+      rating: 4.7,
+      difficulty: 'Medium',
+      servings: 6,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Kanji+Vada',
+      seasonal: true,
+      ingredients: [
+        // For Vadas
+        '1 cup urad dal, soaked for 4 hours',
+        '2 green chilies, chopped',
+        '1 inch ginger, grated',
+        'Salt to taste',
+        'Oil for frying',
+        // For Kanji
+        '4 cups water',
+        '3 tbsp mustard powder',
+        '1 tbsp red chili powder',
+        '1 tsp asafoetida (hing)',
+        '2 tbsp salt',
+        '1 tbsp roasted cumin powder'
+      ],
+      instructions: [
+        'Grind urad dal to a smooth paste with minimal water.',
+        'Add green chilies, ginger, and salt to the batter.',
+        'Heat oil and drop small portions of batter to make vadas.',
+        'Fry until golden brown. Soak in water for 15 minutes, then squeeze out excess water.',
+        'For kanji, mix all ingredients and keep in a glass jar.',
+        'Leave to ferment in sunlight for 2-3 days.',
+        'Add the vadas to fermented kanji water before serving.'
+      ],
+      culturalStory: "Kanji Vada is a traditional probiotic drink-snack combination that showcases the fermentation techniques perfected in Rajasthan's hot climate. The natural fermentation not only preserves the food but creates beneficial bacteria. It's traditionally prepared during the spring festival of Holi, when the weather transitions from cold to hot, and is believed to cleanse the digestive system and prepare the body for summer."
+    },
+    {
+      id: 'besan-bhari-mirch',
+      title: 'Besan Bhari Mirch',
+      description: 'Green chilies stuffed with spicy gram flour mixture.',
+      region: 'Rajasthan',
+      prepTime: 25,
+      cookTime: 20,
+      rating: 4.6,
+      difficulty: 'Medium',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Besan+Bhari+Mirch',
+      ingredients: [
+        '10-12 large green chilies',
+        '1 cup besan (gram flour)',
+        '2 tbsp oil',
+        '1 tsp cumin seeds',
+        '1 tsp coriander powder',
+        '1/2 tsp turmeric powder',
+        '1/2 tsp red chili powder',
+        '1/2 tsp garam masala',
+        '1 tsp amchur (dried mango powder)',
+        'Salt to taste',
+        '2 tbsp oil for cooking'
+      ],
+      instructions: [
+        'Make a slit in green chilies and remove seeds.',
+        'Heat 2 tbsp oil and add cumin seeds.',
+        'Add besan and roast on low flame until fragrant.',
+        'Add all spices and mix well. Cool slightly.',
+        'Stuff the mixture into green chilies.',
+        'Heat remaining oil in a pan and place stuffed chilies.',
+        'Cover and cook on low flame for 10-12 minutes, turning occasionally.',
+        'Serve hot with roti or paratha.'
+      ],
+      culturalStory: "Besan Bhari Mirch showcases Rajasthanis' love for spicy foods despite the desert heat. This dish was traditionally prepared as a way to preserve chilies during abundant harvests. In Marwari households, it's often prepared during the monsoon season when fresh green chilies are plentiful. The roasted besan filling provides a delicious contrast to the spicy chilies, creating a perfect balance of flavors that complements the simplicity of Rajasthani bread."
+    },
+    {
+      id: 'rabri',
+      title: 'Rajasthani Rabri',
+      description: 'Rich, creamy milk dessert with layers of malai.',
+      region: 'Rajasthan',
+      prepTime: 10,
+      cookTime: 60,
+      rating: 4.9,
+      difficulty: 'Medium',
+      servings: 6,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Rabri',
+      ingredients: [
+        '2 liters full-fat milk',
+        '1/2 cup sugar',
+        '1/4 tsp cardamom powder',
+        '1 pinch saffron strands',
+        '2 tbsp chopped pistachios',
+        '2 tbsp chopped almonds',
+        '2 tbsp rose water',
+        'Few strands of saffron'
+      ],
+      instructions: [
+        'Boil milk in a wide, heavy-bottomed pan.',
+        'Once it starts boiling, reduce heat to medium-low.',
+        'As cream forms on top, gently push it to the sides of the pan.',
+        'Continue this process for about 45 minutes until milk reduces to 1/3.',
+        'Add sugar, cardamom powder, and saffron. Mix gently.',
+        'Cook for another 10 minutes until sugar dissolves completely.',
+        'Turn off heat and add rose water.',
+        'Garnish with nuts and serve chilled.'
+      ],
+      culturalStory: 'Rabri holds a special place in Rajasthani royal cuisine, where it was often prepared for celebrations and to honor distinguished guests. The slow process of reducing milk and collecting malai (cream) layers symbolizes patience and richness. In Rajasthan\'s dairy-loving culture, rabri represents prosperity and is often offered at temples during festivals. Traditional preparation involves using earthen pots, which impart a unique flavor to this luxurious dessert.'
+    },
+    {
+      id: 'mirchi-ke-tipore',
+      title: 'Mirchi Ke Tipore',
+      description: 'Delicate green chili fritters in a crispy batter.',
+      region: 'Rajasthan',
+      prepTime: 20,
+      cookTime: 15,
+      rating: 4.6,
+      difficulty: 'Medium',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Mirchi+Ke+Tipore',
+      ingredients: [
+        '10-12 large green chilies',
+        '1 cup besan (gram flour)',
+        '1/4 cup rice flour',
+        '1/2 tsp ajwain (carom seeds)',
+        '1/2 tsp red chili powder',
+        '1/4 tsp turmeric powder',
+        '1/2 tsp garam masala',
+        '1 tbsp oil',
+        'Salt to taste',
+        'Oil for deep frying',
+        'Mint chutney for serving'
+      ],
+      instructions: [
+        'Make a small slit in green chilies and remove seeds partially.',
+        'Mix besan, rice flour, ajwain, spices, salt, and 1 tbsp oil.',
+        'Add water gradually to make a thick batter.',
+        'Heat oil for deep frying.',
+        'Dip each chili in batter and deep fry until golden.',
+        'Fry in batches, ensuring oil temperature is medium-hot.',
+        'Serve hot with mint chutney and tea.'
+      ],
+      culturalStory: 'Mirchi Ke Tipore are a beloved teatime snack in Rajasthan, often prepared during monsoon season when fresh green chilies are abundant. This dish represents the Marwari tradition of creating flavorful snacks from simple ingredients. The light, crispy coating perfectly balances the heat of the chilies, making them enjoyable even for those who prefer milder flavors.'
+    },
+    {
+      id: 'jaisalmeri-chana',
+      title: 'Jaisalmeri Chana',
+      description: 'Spicy chickpea curry in the style of Jaisalmer with aromatic spices.',
+      region: 'Rajasthan',
+      prepTime: 15,
+      cookTime: 30,
+      rating: 4.7,
+      difficulty: 'Medium',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Jaisalmeri+Chana',
+      ingredients: [
+        '2 cups cooked chickpeas',
+        '2 onions, finely chopped',
+        '3 tomatoes, chopped',
+        '1 tbsp ginger-garlic paste',
+        '2 green chilies, chopped',
+        '1 tsp cumin seeds',
+        '1 tbsp coriander powder',
+        '1 tsp red chili powder',
+        '1/2 tsp turmeric powder',
+        '1 tsp garam masala',
+        '1 tsp amchur (dried mango powder)',
+        '3 tbsp mustard oil',
+        'Salt to taste',
+        'Fresh cilantro for garnish'
+      ],
+      instructions: [
+        'Heat mustard oil in a heavy-bottomed pan.',
+        'Add cumin seeds and let them splutter.',
+        'Add chopped onions and cook until golden brown.',
+        'Add ginger-garlic paste and green chilies.',
+        'Add tomatoes and cook until they break down.',
+        'Add all spices and cook until oil separates.',
+        'Add cooked chickpeas with some cooking liquid.',
+        'Simmer for 15 minutes until flavors blend.',
+        'Garnish with cilantro and serve with bajra roti.'
+      ],
+      culturalStory: 'Jaisalmeri Chana originates from the golden city of Jaisalmer, where this protein-rich dish sustained caravan traders crossing the Thar Desert. The use of mustard oil and dried mango powder reflects the local palate and preservation techniques. This hearty curry was traditionally cooked in brass vessels over wood fires, giving it a distinctive smoky flavor that complemented the robust spices.'
+    },
+    {
+      id: 'kairi-mirch-ki-sabzi',
+      title: 'Kairi Mirch Ki Sabzi',
+      description: 'Tangy raw mango and green chili curry, perfect for summer.',
+      region: 'Rajasthan',
+      prepTime: 15,
+      cookTime: 20,
+      rating: 4.5,
+      difficulty: 'Easy',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Kairi+Mirch+Ki+Sabzi',
+      seasonal: true,
+      ingredients: [
+        '2 large raw mangoes, cut into strips',
+        '8-10 green chilies, slit lengthwise',
+        '2 tbsp mustard oil',
+        '1/2 tsp mustard seeds',
+        '1/2 tsp cumin seeds',
+        '1/4 tsp asafoetida (hing)',
+        '1/2 tsp turmeric powder',
+        '1 tsp red chili powder',
+        '1 tsp coriander powder',
+        '1/2 tsp fennel powder',
+        'Salt to taste',
+        '1 tbsp jaggery'
+      ],
+      instructions: [
+        'Heat mustard oil in a pan until smoking, then cool slightly.',
+        'Add mustard seeds and cumin seeds.',
+        'Add asafoetida and all spice powders.',
+        'Add raw mango strips and green chilies.',
+        'Mix well and cook covered for 10 minutes.',
+        'Add jaggery and salt, mix gently.',
+        'Cook until mangoes are tender but not mushy.',
+        'Serve hot with bajra roti or as a pickle-like side dish.'
+      ],
+      culturalStory: 'Kairi Mirch Ki Sabzi is a seasonal specialty prepared during mango season in Rajasthan. This tangy-spicy dish serves as both a vegetable and a pickle, showcasing the Rajasthani ability to create multiple dishes from seasonal produce. It was traditionally prepared to cool the body during intense summer heat, as raw mangoes have natural cooling properties.'
+    },
+    {
+      id: 'jaiphali-aloo',
+      title: 'Jaiphali Aloo',
+      description: 'Aromatic potatoes cooked with nutmeg and royal spices.',
+      region: 'Rajasthan',
+      prepTime: 20,
+      cookTime: 25,
+      rating: 4.8,
+      difficulty: 'Medium',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Jaiphali+Aloo',
+      ingredients: [
+        '500g small potatoes, boiled and peeled',
+        '2 onions, finely chopped',
+        '1 tbsp ginger-garlic paste',
+        '1/2 cup yogurt',
+        '1/4 tsp nutmeg powder (jaiphali)',
+        '1/4 tsp mace powder (javitri)',
+        '1 tsp red chili powder',
+        '1/2 tsp turmeric powder',
+        '1 tsp garam masala',
+        '3 tbsp ghee',
+        'Salt to taste',
+        'Fresh mint leaves for garnish'
+      ],
+      instructions: [
+        'Heat ghee in a heavy-bottomed pan.',
+        'Add chopped onions and cook until golden brown.',
+        'Add ginger-garlic paste and cook for 2 minutes.',
+        'Whisk yogurt and add to the pan with all spices.',
+        'Cook until oil separates from the masala.',
+        'Add boiled potatoes and mix gently.',
+        'Cover and simmer for 10 minutes.',
+        'Garnish with mint leaves and serve with puris.'
+      ],
+      culturalStory: 'Jaiphali Aloo was a signature dish in Rajasthani royal kitchens, where exotic spices like nutmeg and mace showcased the wealth and refinement of the maharajas. The aromatic dish was often prepared for special occasions and state banquets. The use of these expensive spices reflected the royal trade connections with distant lands and the sophisticated palate of Rajasthani nobility.'
+    },
+    {
+      id: 'haldi-ki-sabzi',
+      title: 'Haldi Ki Sabzi',
+      description: 'Fresh turmeric rhizome curry with aromatic spices.',
+      region: 'Rajasthan',
+      prepTime: 25,
+      cookTime: 30,
+      rating: 4.6,
+      difficulty: 'Medium',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Haldi+Ki+Sabzi',
+      seasonal: true,
+      ingredients: [
+        '300g fresh turmeric rhizomes, peeled and sliced',
+        '2 onions, sliced',
+        '2 tomatoes, chopped',
+        '1 tbsp ginger-garlic paste',
+        '2 green chilies, slit',
+        '1 tsp cumin seeds',
+        '1/2 tsp asafoetida (hing)',
+        '1 tsp coriander powder',
+        '1/2 tsp red chili powder',
+        '1/2 tsp garam masala',
+        '3 tbsp oil',
+        'Salt to taste',
+        'Fresh cilantro for garnish'
+      ],
+      instructions: [
+        'Wear gloves while handling fresh turmeric to avoid staining.',
+        'Heat oil in a pan and add cumin seeds and asafoetida.',
+        'Add sliced onions and cook until golden.',
+        'Add ginger-garlic paste and green chilies.',
+        'Add tomatoes and cook until soft.',
+        'Add all spices and turmeric slices.',
+        'Cover and cook on low heat for 20 minutes.',
+        'Garnish with cilantro and serve with roti.'
+      ],
+      culturalStory: 'Haldi Ki Sabzi is prepared during the winter months when fresh turmeric rhizomes are harvested in Rajasthan. This medicinal vegetable dish is highly valued in Ayurvedic cooking for its anti-inflammatory and immunity-boosting properties. Traditionally prepared during wedding seasons, it was believed to purify the blood and enhance the bride and groom\'s complexion.'
+    },
+    {
+      id: 'meetha-oliya',
+      title: 'Meetha Oliya',
+      description: 'Sweet rice flour pancakes with jaggery and ghee.',
+      region: 'Rajasthan',
+      prepTime: 15,
+      cookTime: 20,
+      rating: 4.7,
+      difficulty: 'Easy',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Meetha+Oliya',
+      ingredients: [
+        '1 cup rice flour',
+        '1/2 cup jaggery, grated',
+        '1/2 cup milk',
+        '2 tbsp ghee',
+        '1/4 tsp cardamom powder',
+        '2 tbsp chopped almonds',
+        '2 tbsp raisins',
+        '1/4 tsp salt',
+        'Ghee for cooking'
+      ],
+      instructions: [
+        'Melt jaggery with a little water to make syrup.',
+        'Mix rice flour with milk, melted jaggery, ghee, and salt.',
+        'Add cardamom powder, almonds, and raisins.',
+        'Make a smooth batter and rest for 10 minutes.',
+        'Heat a non-stick pan and brush with ghee.',
+        'Pour batter to make small pancakes.',
+        'Cook until golden on both sides.',
+        'Serve warm with extra ghee drizzled on top.'
+      ],
+      culturalStory: 'Meetha Oliya are traditional sweet pancakes prepared during festivals like Teej and Karva Chauth in Rajasthan. These delicate treats represent the sweetness of marital bliss and are often prepared by mothers-in-law for their daughters-in-law. The use of rice flour makes them light and easily digestible, perfect for breaking fasts during religious observances.'
+    },
+    {
+      id: 'namkeen-oliya',
+      title: 'Namkeen Oliya',
+      description: 'Savory rice flour pancakes with spices and vegetables.',
+      region: 'Rajasthan',
+      prepTime: 20,
+      cookTime: 25,
+      rating: 4.6,
+      difficulty: 'Easy',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Namkeen+Oliya',
+      ingredients: [
+        '1 cup rice flour',
+        '1/4 cup yogurt',
+        '1 onion, finely chopped',
+        '2 green chilies, chopped',
+        '1 tsp ginger paste',
+        '1/4 cup coriander leaves, chopped',
+        '1/2 tsp cumin seeds',
+        '1/4 tsp asafoetida (hing)',
+        '1/2 tsp red chili powder',
+        'Salt to taste',
+        'Water as needed',
+        'Oil for cooking'
+      ],
+      instructions: [
+        'Mix rice flour, yogurt, and all dry spices.',
+        'Add chopped onions, chilies, ginger, and coriander.',
+        'Add water gradually to make a pancake batter consistency.',
+        'Heat oil in a non-stick pan.',
+        'Pour batter to make medium-sized pancakes.',
+        'Cook on medium heat until golden and crispy.',
+        'Flip and cook the other side.',
+        'Serve hot with pickle or chutney.'
+      ],
+      culturalStory: 'Namkeen Oliya are the savory counterpart to sweet oliya, commonly prepared as a quick breakfast or evening snack in Rajasthani households. These nutritious pancakes were traditionally made with leftover vegetables and herbs, demonstrating the zero-waste cooking philosophy of desert communities. They provided a light yet satisfying meal during the scorching summer months.'
+    },
+    {
+      id: 'rajasthani-makkai-dhokla',
+      title: 'Rajasthani Makkai Ka Dhokla',
+      description: 'Steamed corn flour cakes with traditional Rajasthani flavors.',
+      region: 'Rajasthan',
+      prepTime: 20,
+      cookTime: 25,
+      rating: 4.5,
+      difficulty: 'Medium',
+      servings: 6,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Makkai+Ka+Dhokla',
+      ingredients: [
+        '1 cup makkai ka atta (corn flour)',
+        '1/2 cup yogurt',
+        '1 tsp ginger-green chili paste',
+        '1/2 tsp turmeric powder',
+        '1 tsp sugar',
+        '1 tsp salt',
+        '2 tbsp oil',
+        '1 tsp eno fruit salt',
+        // For tempering
+        '2 tbsp oil',
+        '1 tsp mustard seeds',
+        '1 tsp cumin seeds',
+        '10-12 curry leaves',
+        '2 green chilies, slit',
+        'Grated coconut and cilantro for garnish'
+      ],
+      instructions: [
+        'Mix corn flour, yogurt, ginger-chili paste, turmeric, sugar, salt, and oil.',
+        'Add water to make a thick batter and rest for 15 minutes.',
+        'Just before steaming, add eno and mix gently.',
+        'Pour into greased dhokla plates and steam for 15 minutes.',
+        'Check doneness with a toothpick.',
+        'For tempering, heat oil and add mustard seeds, cumin, curry leaves.',
+        'Pour tempering over steamed dhokla.',
+        'Garnish with coconut and cilantro.'
+      ],
+      culturalStory: 'Makkai Ka Dhokla is a Rajasthani adaptation of the Gujarati favorite, using locally abundant corn flour instead of rice and lentils. This variation emerged from the culinary exchange between Rajasthan and Gujarat through historical trade routes. The use of corn reflects the agricultural practices of Rajasthan, where corn grows well in semi-arid conditions.'
+    },
+    {
       id: 'rajma',
       title: 'Rajma',
       description: 'Kidney bean curry cooked in aromatic spices.',
@@ -286,6 +941,402 @@ const getAdditionalRecipes = () => {
       ]
     },
     {
+      id: 'aloo-posto',
+      title: 'Aloo Posto',
+      description: 'Traditional Bengali potato curry cooked in poppy seed paste.',
+      region: 'West Bengal',
+      prepTime: 20,
+      cookTime: 25,
+      rating: 4.6,
+      difficulty: 'Easy',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Aloo+Posto',
+      ingredients: [
+        '4 medium potatoes, peeled and cubed',
+        '3 tbsp white poppy seeds (posto)',
+        '2 green chilies, slit',
+        '1 tsp ginger paste',
+        '1/2 tsp turmeric powder',
+        '1 tsp cumin seeds',
+        '2 bay leaves',
+        '3 tbsp mustard oil',
+        'Salt to taste',
+        'Fresh cilantro for garnish'
+      ],
+      instructions: [
+        'Soak poppy seeds in warm water for 30 minutes, then grind to a smooth paste.',
+        'Heat mustard oil in a pan and fry potato cubes until lightly golden. Set aside.',
+        'In the same oil, add cumin seeds and bay leaves.',
+        'Add ginger paste and green chilies, cook for 1 minute.',
+        'Add turmeric powder and the poppy seed paste.',
+        'Add fried potatoes and mix well.',
+        'Add a little water if needed and cook covered for 10 minutes.',
+        'Season with salt and garnish with cilantro.'
+      ],
+      culturalStory: "Aloo Posto is the quintessential comfort food of Bengali households. The dish represents the Bengali love for subtle flavors and minimal spicing. Poppy seeds, or 'posto', are a staple in Bengali cuisine, and this dish is often prepared during monsoons when fresh vegetables are scarce. It's said that no Bengali home is complete without this simple yet satisfying dish.",
+      tips: [
+        'Use good quality white poppy seeds for the best flavor.',
+        'Don\'t skip the mustard oil - it\'s essential for authentic taste.',
+        'Cook on low heat to prevent the posto from burning.',
+        'Serve with steamed rice for the traditional experience.'
+      ]
+    },
+    {
+      id: 'rasgulla',
+      title: 'Rasgulla',
+      description: 'Spongy cottage cheese dumplings in sugar syrup.',
+      region: 'West Bengal',
+      prepTime: 30,
+      cookTime: 20,
+      rating: 4.8,
+      difficulty: 'Hard',
+      servings: 6,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Rasgulla',
+      ingredients: [
+        '1 liter full-fat milk',
+        '2 tbsp lemon juice',
+        '1 cup sugar',
+        '3 cups water',
+        '4-5 cardamom pods',
+        '1 tsp rose water (optional)'
+      ],
+      instructions: [
+        'Boil milk and add lemon juice to curdle it.',
+        'Strain through muslin cloth to separate chenna (cottage cheese).',
+        'Rinse chenna under cold water and squeeze out excess water.',
+        'Knead chenna for 5-7 minutes until smooth and soft.',
+        'Make small balls from the chenna.',
+        'Boil sugar, water, and cardamom to make syrup.',
+        'Add chenna balls to boiling syrup and cook for 15 minutes.',
+        'Add rose water and let cool before serving.'
+      ],
+      culturalStory: "Rasgulla is the pride of Bengali sweets, invented by Nobin Chandra Das in 1868 in Kolkata. This spongy delight has been the subject of a famous culinary dispute between West Bengal and Odisha, but its modern avatar was perfected in Bengal. It's an integral part of Bengali festivals, especially Durga Puja, and represents the innovative spirit of Bengali confectioners.",
+      tips: [
+        'Use fresh, full-fat milk for best results.',
+        'Knead the chenna until it becomes smooth and non-grainy.',
+        'Keep the syrup boiling while cooking the rasgullas.',
+        'Don\'t overcrowd the pan while cooking.'
+      ]
+    },
+    {
+      id: 'amer-chatney',
+      title: 'Amer Chatney',
+      description: 'Sweet and tangy mango chutney - a Bengali delicacy.',
+      region: 'West Bengal',
+      prepTime: 15,
+      cookTime: 30,
+      rating: 4.5,
+      difficulty: 'Easy',
+      servings: 8,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Amer+Chatney',
+      ingredients: [
+        '2 raw mangoes, grated',
+        '1 cup jaggery or brown sugar',
+        '1 tsp ginger, minced',
+        '2 dry red chilies',
+        '1 tsp panch phoron',
+        '1/2 tsp red chili powder',
+        '1/4 tsp turmeric powder',
+        '2 tbsp mustard oil',
+        'Salt to taste'
+      ],
+      instructions: [
+        'Heat mustard oil and add dry red chilies and panch phoron.',
+        'Add minced ginger and cook for 30 seconds.',
+        'Add grated mango and cook for 5 minutes.',
+        'Add jaggery, turmeric, chili powder, and salt.',
+        'Cook on low heat, stirring occasionally, for 20 minutes.',
+        'Cook until the chutney reaches a thick consistency.',
+        'Let it cool and store in airtight container.'
+      ],
+      culturalStory: "Amer Chatney is the soul of Bengali cuisine, prepared in every household during mango season. This sweet-tangy condiment accompanies almost every Bengali meal, especially rice and dal. The art of making the perfect chatney is passed down through generations, with each family having their secret ratio of sweet to tangy flavors.",
+      tips: [
+        'Use slightly sour raw mangoes for best flavor.',
+        'Adjust jaggery according to your taste preference.',
+        'Store in refrigerator - it lasts for weeks.',
+        'Serve with rice, dal, or as a side dish.'
+      ]
+    },
+    {
+      id: 'machher-jhol',
+      title: 'Machher Jhol',
+      description: 'Light and flavorful Bengali fish curry with vegetables.',
+      region: 'West Bengal',
+      prepTime: 25,
+      cookTime: 30,
+      rating: 4.7,
+      difficulty: 'Medium',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Machher+Jhol',
+      ingredients: [
+        '500g fish (Rohu/Katla), cut in pieces',
+        '1 large potato, cubed',
+        '1 eggplant, cubed',
+        '2 tomatoes, chopped',
+        '1 onion, sliced',
+        '2 green chilies, slit',
+        '1 tsp ginger paste',
+        '1 tsp turmeric powder',
+        '1 tsp cumin powder',
+        '1 tsp coriander powder',
+        '4 tbsp mustard oil',
+        '1 tsp panch phoron',
+        'Salt to taste'
+      ],
+      instructions: [
+        'Marinate fish with turmeric and salt for 15 minutes.',
+        'Heat mustard oil and fry fish pieces until golden. Set aside.',
+        'Fry potato and eggplant pieces until lightly golden.',
+        'Add panch phoron to the same oil.',
+        'Add onions and cook until soft.',
+        'Add ginger paste, tomatoes, and all spices.',
+        'Add water to make thin curry consistency.',
+        'Add vegetables and fish, simmer for 15 minutes.',
+        'Serve hot with steamed rice.'
+      ],
+      culturalStory: "Machher Jhol is the everyday comfort food of Bengali families. Unlike the richer fish curries, jhol is light and easily digestible, often prepared for sick family members. The word 'jhol' means thin gravy, and this dish represents the Bengali philosophy of simple, wholesome cooking that nourishes both body and soul.",
+      tips: [
+        'Use river fish for authentic taste.',
+        'Keep the gravy thin - it should not be thick.',
+        'Don\'t overcook the fish to prevent breaking.',
+        'Serve immediately with hot rice.'
+      ]
+    },
+    {
+      id: 'cholar-dal',
+      title: 'Cholar Dal',
+      description: 'Bengali-style chana dal with coconut and aromatic spices.',
+      region: 'West Bengal',
+      prepTime: 15,
+      cookTime: 35,
+      rating: 4.6,
+      difficulty: 'Easy',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Cholar+Dal',
+      ingredients: [
+        '1 cup chana dal (split Bengal gram)',
+        '2 tbsp ghee',
+        '1 bay leaf',
+        '2 green cardamom pods',
+        '1 inch cinnamon stick',
+        '1 tsp ginger paste',
+        '2 green chilies, slit',
+        '1/2 tsp turmeric powder',
+        '1 tsp cumin powder',
+        '2 tbsp coconut, grated',
+        '2 tbsp raisins',
+        'Salt to taste'
+      ],
+      instructions: [
+        'Wash and soak chana dal for 30 minutes.',
+        'Boil dal with turmeric until soft but not mushy.',
+        'Heat ghee and add bay leaf, cardamom, and cinnamon.',
+        'Add ginger paste and green chilies, cook for 1 minute.',
+        'Add cooked dal, cumin powder, and salt.',
+        'Cook for 10 minutes until flavors blend.',
+        'Add grated coconut and raisins in last 2 minutes.',
+        'Serve hot with rice or luchi.'
+      ],
+      culturalStory: "Cholar Dal is a festive dish in Bengali cuisine, specially prepared during Durga Puja and other celebrations. The addition of coconut and raisins makes it distinctly Bengali, different from other regional dal preparations. It's often served with luchi (puffed bread) and represents the sweet side of Bengali savory cooking.",
+      tips: [
+        'Don\'t overcook the dal - it should hold its shape.',
+        'Fresh coconut gives the best flavor.',
+        'Adjust sweetness by varying the amount of raisins.',
+        'Serve with luchi for the traditional combination.'
+      ]
+    },
+    {
+      id: 'mishti-doi',
+      title: 'Mishti Doi',
+      description: 'Sweet yogurt dessert - a Bengali classic.',
+      region: 'West Bengal',
+      prepTime: 15,
+      cookTime: 10,
+      rating: 4.8,
+      difficulty: 'Medium',
+      servings: 6,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Mishti+Doi',
+      ingredients: [
+        '1 liter full-fat milk',
+        '1/2 cup sugar',
+        '2 tbsp plain yogurt',
+        '4-5 cardamom pods, crushed',
+        '1 tbsp chopped pistachios (optional)'
+      ],
+      instructions: [
+        'Boil milk in a heavy-bottom pan until it reduces to 3/4.',
+        'Add sugar and cook until dissolved.',
+        'Add crushed cardamom and mix well.',
+        'Let the milk cool to lukewarm temperature.',
+        'Whisk yogurt until smooth and add to milk.',
+        'Pour into earthen pots or glass bowls.',
+        'Keep in a warm place for 4-6 hours to set.',
+        'Refrigerate before serving, garnish with pistachios.'
+      ],
+      culturalStory: "Mishti Doi is Bengal's answer to sweet curd, traditionally made in earthen pots that give it a unique flavor and aroma. The dish originated in the Krishna temples of Bengal and became a household favorite. The earthen pots not only provide the characteristic taste but also keep the doi naturally cool, making it a perfect summer dessert.",
+      tips: [
+        'Use earthen pots for authentic flavor if available.',
+        'Don\'t disturb while setting - keep in a warm, draft-free place.',
+        'Adjust sugar according to your preference.',
+        'Serve chilled for best taste.'
+      ]
+    },
+    {
+      id: 'kosha-mangsho',
+      title: 'Kosha Mangsho',
+      description: 'Slow-cooked spicy Bengali mutton curry.',
+      region: 'West Bengal',
+      prepTime: 30,
+      cookTime: 90,
+      rating: 4.9,
+      difficulty: 'Hard',
+      servings: 6,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Kosha+Mangsho',
+      ingredients: [
+        '1 kg mutton, cut in pieces',
+        '3 large onions, sliced',
+        '2 tbsp ginger-garlic paste',
+        '2 tsp red chili powder',
+        '1 tsp turmeric powder',
+        '2 tsp cumin powder',
+        '2 tsp coriander powder',
+        '1 tsp garam masala powder',
+        '2 bay leaves',
+        '4-5 green cardamom pods',
+        '2 inch cinnamon stick',
+        '4 tbsp mustard oil',
+        '2 tbsp ghee',
+        'Salt to taste'
+      ],
+      instructions: [
+        'Marinate mutton with ginger-garlic paste, turmeric, and salt for 1 hour.',
+        'Heat mustard oil and fry onions until deep golden brown.',
+        'Remove onions and make a paste.',
+        'In the same oil, add whole spices and fry marinated mutton.',
+        'Cook mutton on high heat until water evaporates.',
+        'Add onion paste and all spice powders.',
+        'Cook on slow heat for 60-90 minutes until tender.',
+        'Finish with ghee and garam masala.',
+        'Serve hot with steamed rice.'
+      ],
+      culturalStory: "Kosha Mangsho is the crown jewel of Bengali non-vegetarian cuisine. 'Kosha' means slow-cooked until the spices coat the meat perfectly. This dish is central to Bengali celebrations and Sunday family meals. The technique of slow cooking until the oil separates and the meat becomes tender is an art passed down through generations of Bengali cooks.",
+      tips: [
+        'Use tender cuts of mutton for best results.',
+        'Cook on low heat - patience is key for perfect kosha.',
+        'The oil should separate when properly cooked.',
+        'Serve with plain rice to appreciate the rich flavors.'
+      ]
+    },
+    {
+      id: 'sandesh',
+      title: 'Sandesh',
+      description: 'Delicate Bengali sweet made from fresh cottage cheese.',
+      region: 'West Bengal',
+      prepTime: 45,
+      cookTime: 15,
+      rating: 4.7,
+      difficulty: 'Hard',
+      servings: 8,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Sandesh',
+      ingredients: [
+        '1 liter full-fat milk',
+        '2 tbsp lemon juice',
+        '1/4 cup powdered sugar',
+        '4-5 cardamom pods, powdered',
+        '2 tbsp chopped pistachios',
+        '1 tsp rose water (optional)'
+      ],
+      instructions: [
+        'Boil milk and add lemon juice to curdle.',
+        'Strain through muslin cloth to get chenna.',
+        'Rinse chenna under cold water and squeeze out water.',
+        'Knead chenna for 10 minutes until smooth.',
+        'Cook chenna in a pan on low heat for 5 minutes.',
+        'Add sugar and cardamom powder, mix well.',
+        'Cook until mixture leaves the sides of pan.',
+        'Shape into desired forms and garnish with pistachios.',
+        'Let cool and serve.'
+      ],
+      culturalStory: "Sandesh is the most refined of all Bengali sweets, representing the sophistication of Bengali confectionery art. Each sweet shop in Bengal has its own signature style of sandesh. The sweet is often molded into artistic shapes and is considered the perfect offering to guests and deities alike.",
+      tips: [
+        'Use very fresh milk for best texture.',
+        'Knead the chenna until completely smooth.',
+        'Don\'t overcook - it should be moist, not dry.',
+        'Shape while still warm for best results.'
+      ]
+    },
+    {
+      id: 'begun-bhaja',
+      title: 'Begun Bhaja',
+      description: 'Crispy fried eggplant - a Bengali comfort side dish.',
+      region: 'West Bengal',
+      prepTime: 15,
+      cookTime: 20,
+      rating: 4.4,
+      difficulty: 'Easy',
+      servings: 4,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Begun+Bhaja',
+      ingredients: [
+        '2 large eggplants, sliced',
+        '1 tsp turmeric powder',
+        '1 tsp red chili powder',
+        '1 tsp cumin powder',
+        'Salt to taste',
+        'Mustard oil for frying'
+      ],
+      instructions: [
+        'Slice eggplants and sprinkle salt, let sit for 15 minutes.',
+        'Pat dry with paper towels.',
+        'Mix turmeric, chili powder, cumin powder with salt.',
+        'Coat eggplant slices with spice mixture.',
+        'Heat mustard oil in a pan.',
+        'Fry eggplant slices until golden and crispy.',
+        'Drain on paper towels and serve hot.'
+      ],
+      culturalStory: "Begun Bhaja is the humble yet beloved side dish that graces every Bengali meal. The art lies in getting the eggplant perfectly crispy while maintaining its soft interior. It's often the first dish young Bengali brides learn to make, and its simplicity belies the technique required to perfect it.",
+      tips: [
+        'Choose firm, fresh eggplants for best results.',
+        'Salting removes bitterness - don\'t skip this step.',
+        'Fry in hot oil for crispy exterior.',
+        'Serve immediately while hot and crispy.'
+      ]
+    },
+    {
+      id: 'luchi',
+      title: 'Luchi',
+      description: 'Deep-fried puffed bread - Bengali festive bread.',
+      region: 'West Bengal',
+      prepTime: 30,
+      cookTime: 20,
+      rating: 4.6,
+      difficulty: 'Medium',
+      servings: 6,
+      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Luchi',
+      ingredients: [
+        '2 cups all-purpose flour',
+        '2 tbsp ghee',
+        '1/2 tsp salt',
+        '1/2 cup warm water',
+        'Oil for deep frying'
+      ],
+      instructions: [
+        'Mix flour, ghee, and salt in a bowl.',
+        'Gradually add water to form smooth dough.',
+        'Knead well and rest for 30 minutes.',
+        'Divide into small balls and roll very thin.',
+        'Heat oil for deep frying.',
+        'Fry each luchi until it puffs up and turns golden.',
+        'Serve immediately while hot.'
+      ],
+      culturalStory: "Luchi is the festive bread of Bengal, essential for celebrations like Durga Puja, Kali Puja, and family gatherings. The perfectly round, puffed luchi is considered an art form, and the ability to make perfect luchis is a mark of culinary skill in Bengali households. It's traditionally served with cholar dal, alur dom, or begun bhaja.",
+      tips: [
+        'Roll very thin for perfect puffing.',
+        'Oil temperature should be hot but not smoking.',
+        'Serve immediately - luchi deflates quickly.',
+        'Traditional accompaniments include cholar dal and alur dom.'
+      ]
+    },
+    {
       id: 'dal-makhani',
       title: 'Dal Makhani',
       description: 'Creamy black lentils slow-cooked with butter and cream.',
@@ -297,499 +1348,116 @@ const getAdditionalRecipes = () => {
       servings: 6,
       image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Dal+Makhani',
       ingredients: [
-        '1 cup whole black lentils (urad dal), soaked overnight',
-        '1/4 cup kidney beans, soaked overnight',
+        '1 cup whole black lentils (urad dal)',
+        '1/4 cup kidney beans (rajma)',
         '2 tbsp butter',
-        '1 tbsp ghee',
         '1 large onion, finely chopped',
+        '3 cloves garlic, minced',
+        '1 inch ginger, grated',
         '2 tomatoes, pureed',
-        '1 tbsp ginger-garlic paste',
-        '1 green chili, chopped',
         '1 tsp cumin seeds',
         '1 tsp red chili powder',
-        '1 tsp garam masala powder',
+        '1/2 tsp garam masala',
         '1/2 cup heavy cream',
         'Salt to taste',
         'Fresh cilantro for garnish'
       ],
       instructions: [
-        'Cook soaked lentils and kidney beans in pressure cooker until very soft.',
-        'Heat butter and ghee in a heavy-bottomed pan.',
-        'Add cumin seeds and chopped onions. Cook until golden.',
-        'Add ginger-garlic paste and green chili. Cook for 2 minutes.',
+        'Soak lentils and kidney beans overnight, then pressure cook until very soft.',
+        'Heat butter in a heavy-bottom pan and add cumin seeds.',
+        'Add chopped onions and cook until golden brown.',
+        'Add minced garlic and grated ginger, cook for 2 minutes.',
         'Add tomato puree and cook until oil separates.',
-        'Add cooked lentils and simmer on low heat for 1-2 hours.',
-        'Stir occasionally and add water if needed.',
-        'Add cream and garam masala in the last 10 minutes.',
-        'Garnish with cilantro and serve with naan or rice.'
-      ]
-    },
-    {
-      id: 'dhokla',
-      title: 'Dhokla',
-      description: 'Steamed fermented rice and chickpea cake.',
-      region: 'Gujarat',
-      prepTime: 20,
-      cookTime: 25,
-      rating: 4.5,
-      difficulty: 'Easy',
-      servings: 4,
-      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Dhokla',
-      ingredients: [
-        '1 cup gram flour (besan)',
-        '1/4 cup semolina',
-        '1 tbsp ginger-green chili paste',
-        '1 tsp turmeric powder',
-        '1 tsp sugar',
-        '1 tsp salt',
-        '1 tbsp oil',
-        '1 tsp eno fruit salt',
-        '3/4 cup water',
-        // For tempering
-        '2 tbsp oil',
-        '1 tsp mustard seeds',
-        '1 tsp sesame seeds',
-        '8-10 curry leaves',
-        '2 green chilies, slit',
-        'Fresh cilantro and coconut for garnish'
-      ],
-      instructions: [
-        'Mix gram flour, semolina, ginger-chili paste, turmeric, sugar, salt, and oil.',
-        'Add water gradually to make a smooth batter.',
-        'Just before steaming, add eno and mix gently.',
-        'Pour into greased steaming plates and steam for 12-15 minutes.',
-        'Check doneness with a toothpick - it should come out clean.',
-        'For tempering, heat oil and add mustard seeds.',
-        'Add sesame seeds, curry leaves, and green chilies.',
-        'Pour tempering over steamed dhokla.',
-        'Garnish with cilantro and coconut. Serve with chutney.'
-      ]
-    },
-    {
-      id: 'pav-bhaji',
-      title: 'Pav Bhaji',
-      description: 'Spiced vegetable curry served with buttered bread rolls.',
-      region: 'Maharashtra',
-      prepTime: 20,
-      cookTime: 30,
-      rating: 4.6,
-      difficulty: 'Easy',
-      servings: 4,
-      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Pav+Bhaji',
-      ingredients: [
-        '3 large potatoes, boiled and mashed',
-        '1 cup cauliflower, finely chopped',
-        '1 cup green peas',
-        '1 cup carrots, finely chopped',
-        '2 large onions, finely chopped',
-        '3 tomatoes, finely chopped',
-        '1 tbsp ginger-garlic paste',
-        '2 tbsp pav bhaji masala',
-        '1 tsp red chili powder',
-        '4 tbsp butter',
-        '2 tbsp oil',
-        '8 pav (bread rolls)',
-        'Salt to taste',
-        'Chopped onions and cilantro for garnish',
-        'Lemon wedges for serving'
-      ],
-      instructions: [
-        'Heat oil and butter in a large pan.',
-        'Add chopped onions and cook until soft.',
-        'Add ginger-garlic paste and cook for 2 minutes.',
-        'Add all chopped vegetables and cook until tender.',
-        'Add tomatoes and cook until soft.',
-        'Add mashed potatoes and mix well.',
-        'Add pav bhaji masala, red chili powder, and salt.',
-        'Mash everything together and cook for 10 minutes.',
-        'Butter the pav and toast on a griddle.',
-        'Serve hot bhaji with buttered pav, onions, and lemon.'
-      ]
-    },
-    {
-      id: 'dal-baati-churma',
-      title: 'Dal Baati Churma',
-      description: 'Traditional Rajasthani dish with lentils, baked wheat balls, and sweet crumble.',
-      region: 'Rajasthan',
-      prepTime: 45,
-      cookTime: 60,
-      rating: 4.7,
-      difficulty: 'Hard',
-      servings: 6,
-      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Dal+Baati+Churma',
-      ingredients: [
-        // For Baati
-        '2 cups wheat flour',
-        '1/4 cup semolina',
-        '1/4 cup ghee',
-        '1 tsp salt',
-        '1/2 tsp carom seeds',
-        // For Dal
-        '1 cup mixed lentils',
-        '2 tomatoes, chopped',
-        '1 onion, chopped',
-        '1 tbsp ginger-garlic paste',
-        '1 tsp turmeric powder',
-        '1 tsp red chili powder',
-        '2 tbsp ghee',
-        // For Churma
-        '1 cup coarsely ground wheat flour',
-        '1/2 cup jaggery, grated',
-        '1/4 cup ghee',
-        '1/2 tsp cardamom powder',
-        'Chopped almonds and pistachios'
-      ],
-      instructions: [
-        'For baati, mix flour, semolina, ghee, salt, and carom seeds.',
-        'Add water to make stiff dough. Form into balls and bake at 200°C for 30 minutes.',
-        'For dal, cook lentils until soft. Temper with ghee, onions, and spices.',
-        'Add tomatoes and simmer until thick.',
-        'For churma, roast ground wheat in ghee until golden.',
-        'Add jaggery, cardamom, and nuts. Mix well.',
-        'Serve baati dipped in ghee with dal and churma.'
-      ]
-    },
-    {
-      id: 'sambar',
-      title: 'Sambar',
-      description: 'South Indian lentil curry with vegetables and tamarind.',
-      region: 'Tamil Nadu',
-      prepTime: 20,
-      cookTime: 30,
-      rating: 4.6,
-      difficulty: 'Medium',
-      servings: 4,
-      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Sambar',
-      ingredients: [
-        '1 cup toor dal (split pigeon peas)',
-        '2 tbsp tamarind paste',
-        '2 tbsp sambar powder',
-        '1 cup mixed vegetables (drumstick, brinjal, okra)',
-        '1 onion, chopped',
-        '2 tomatoes, chopped',
-        '2 tbsp oil',
-        '1 tsp mustard seeds',
-        '1 tsp cumin seeds',
-        '10-12 curry leaves',
-        '2 dried red chilies',
-        '1/4 tsp asafoetida',
-        '1/2 tsp turmeric powder',
-        'Salt to taste',
-        'Fresh cilantro for garnish'
-      ],
-      instructions: [
-        'Cook toor dal until soft and mushy.',
-        'Heat oil and add mustard seeds, cumin seeds.',
-        'Add curry leaves, red chilies, and asafoetida.',
-        'Add onions and cook until soft.',
-        'Add vegetables and cook for 5 minutes.',
-        'Add tomatoes, turmeric, and sambar powder.',
-        'Add cooked dal and tamarind paste.',
-        'Add water to desired consistency and simmer for 15 minutes.',
-        'Garnish with cilantro and serve with rice or idli.'
-      ]
-    },
-    {
-      id: 'kerala-fish-curry',
-      title: 'Kerala Fish Curry',
-      description: 'Coconut-based fish curry with curry leaves and kokum.',
-      region: 'Kerala',
-      prepTime: 30,
-      cookTime: 25,
-      rating: 4.8,
-      difficulty: 'Medium',
-      servings: 4,
-      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Kerala+Fish+Curry',
-      ingredients: [
-        '500g fish (kingfish or pomfret), cut into pieces',
-        '2 cups coconut milk',
-        '1 tbsp coconut oil',
-        '1 large onion, sliced',
-        '3 tomatoes, chopped',
-        '1 tbsp ginger-garlic paste',
-        '3 green chilies, slit',
-        '15-20 curry leaves',
-        '1 tsp turmeric powder',
-        '2 tsp red chili powder',
-        '1 tsp coriander powder',
-        '4-5 kokum petals',
-        'Salt to taste'
-      ],
-      instructions: [
-        'Marinate fish with turmeric and salt for 15 minutes.',
-        'Heat coconut oil and add curry leaves.',
-        'Add sliced onions and cook until soft.',
-        'Add ginger-garlic paste and green chilies.',
-        'Add tomatoes and cook until soft.',
-        'Add all spice powders and cook for 2 minutes.',
-        'Add thick coconut milk and bring to a gentle boil.',
-        'Add fish pieces and kokum. Simmer for 10 minutes.',
-        'Serve hot with steamed rice.'
-      ]
-    },
-    {
-      id: 'palak-paneer',
-      title: 'Palak Paneer',
-      description: 'Creamy spinach curry with cottage cheese cubes.',
-      region: 'North India',
-      prepTime: 25,
-      cookTime: 20,
-      rating: 4.7,
-      difficulty: 'Medium',
-      servings: 4,
-      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Palak+Paneer',
-      ingredients: [
-        '500g fresh spinach leaves',
-        '250g paneer, cubed',
-        '2 onions, chopped',
-        '3 tomatoes, chopped',
-        '1 tbsp ginger-garlic paste',
-        '2 green chilies',
-        '1 tsp cumin seeds',
-        '1 tsp garam masala',
-        '1/2 tsp red chili powder',
-        '1/4 cup cream',
-        '3 tbsp oil',
-        'Salt to taste'
-      ],
-      instructions: [
-        'Blanch spinach leaves in boiling water for 2 minutes.',
-        'Blend blanched spinach with green chilies to smooth paste.',
-        'Heat oil and lightly fry paneer cubes. Set aside.',
-        'Add cumin seeds to the same oil.',
-        'Add onions and cook until golden.',
-        'Add ginger-garlic paste and tomatoes.',
-        'Add spices and cook until oil separates.',
-        'Add spinach puree and simmer for 10 minutes.',
-        'Add paneer and cream. Cook for 5 minutes.',
-        'Serve hot with naan or rice.'
-      ]
-    },
-    {
-      id: 'aloo-gobi',
-      title: 'Aloo Gobi',
-      description: 'Spiced potato and cauliflower dry curry.',
-      region: 'North India',
-      prepTime: 20,
-      cookTime: 25,
-      rating: 4.5,
-      difficulty: 'Easy',
-      servings: 4,
-      image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Aloo+Gobi',
-      ingredients: [
-        '3 large potatoes, cubed',
-        '1 medium cauliflower, cut into florets',
-        '2 onions, sliced',
-        '2 tomatoes, chopped',
-        '1 tbsp ginger-garlic paste',
-        '1 tsp cumin seeds',
-        '1 tsp turmeric powder',
-        '1 tsp red chili powder',
-        '1 tsp coriander powder',
-        '1/2 tsp garam masala',
-        '3 tbsp oil',
-        'Salt to taste',
-        'Fresh cilantro for garnish'
-      ],
-      instructions: [
-        'Heat oil in a large pan and add cumin seeds.',
-        'Add potato cubes and fry until lightly golden.',
-        'Add cauliflower florets and cook for 5 minutes.',
-        'Add onions and cook until soft.',
-        'Add ginger-garlic paste and tomatoes.',
-        'Add all spices and mix well.',
-        'Cover and cook on low heat for 15 minutes.',
-        'Stir occasionally until vegetables are tender.',
-        'Garnish with cilantro and serve with roti.'
+        'Add cooked lentils and kidney beans with cooking liquid.',
+        'Simmer on low heat for 1-2 hours, stirring occasionally.',
+        'Add cream, garam masala, and adjust seasoning.',
+        'Garnish with cilantro and serve hot with naan or rice.'
       ]
     }
   ];
 };
 
 export const getSeasonalRecipes = () => {
-  // Check current season and return appropriate recipes
-  // For now, returning summer recipes as an example
-  const currentMonth = new Date().getMonth(); // 0-11
-  
-  // Summer recipes (April to July: months 3-6)
-  if (currentMonth >= 3 && currentMonth <= 6) {
-    return [
+  return {
+    winter: [
       {
-        id: 'mango-lassi',
-        title: 'Mango Lassi',
-        description: 'Refreshing yogurt drink with sweet mangoes and cardamom.',
-        region: 'Punjab',
-        prepTime: 10,
-        cookTime: 0,
-        rating: 4.7,
-        servings: 2,
-        image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Mango+Lassi',
-        seasonal: true,
-        ingredients: [
-          '1 cup ripe mango, chopped',
-          '1 cup yogurt',
-          '1/4 cup milk',
-          '2 tbsp sugar',
-          '1/4 tsp cardamom powder',
-          'Ice cubes',
-          'Pistachios for garnish'
-        ],
-        instructions: [
-          'Blend mango, yogurt, milk, and sugar until smooth.',
-          'Add cardamom powder and blend again.',
-          'Add ice cubes and blend until frothy.',
-          'Pour into glasses and garnish with chopped pistachios.',
-          'Serve immediately while cold.'
-        ]
-      },
-      {
-        id: 'aam-panna',
-        title: 'Aam Panna',
-        description: 'Tangy raw mango cooler with mint and spices.',
-        region: 'North India',
-        prepTime: 15,
-        cookTime: 10,
-        rating: 4.6,
-        servings: 4,
-        image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Aam+Panna',
-        seasonal: true,
-        ingredients: [
-          '2 large raw mangoes',
-          '1/2 cup sugar',
-          '1 tsp roasted cumin powder',
-          '1/2 tsp black salt',
-          '1/4 tsp regular salt',
-          '15-20 mint leaves',
-          '1/4 tsp black pepper',
-          '4 cups chilled water',
-          'Ice cubes',
-          'Mint sprigs for garnish'
-        ],
-        instructions: [
-          'Boil raw mangoes until soft. Cool and extract pulp.',
-          'Blend mango pulp with sugar, cumin powder, salts, mint, and pepper.',
-          'Add chilled water and mix well.',
-          'Add ice cubes and garnish with mint.',
-          'Serve immediately as a summer cooler.'
-        ]
-      },
-      {
-        id: 'cucumber-raita',
-        title: 'Cucumber Raita',
-        description: 'Cooling yogurt side dish with cucumber and cumin.',
-        region: 'All India',
-        prepTime: 10,
-        cookTime: 0,
-        rating: 4.5,
-        servings: 4,
-        image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Cucumber+Raita',
-        seasonal: true,
-        ingredients: [
-          '2 cups yogurt',
-          '2 large cucumbers, grated',
-          '1 tsp roasted cumin powder',
-          '1/2 tsp black salt',
-          '1/4 tsp regular salt',
-          '1 tbsp mint leaves, chopped',
-          '1 tbsp cilantro, chopped',
-          '1 green chili, finely chopped',
-          'Chaat masala for sprinkling'
-        ],
-        instructions: [
-          'Whisk yogurt until smooth.',
-          'Squeeze excess water from grated cucumber.',
-          'Mix cucumber with yogurt.',
-          'Add cumin powder, salts, mint, cilantro, and green chili.',
-          'Chill for 30 minutes and serve with chaat masala sprinkled on top.'
-        ]
-      }
-    ];
-  }
-  
-  // Winter recipes (November to February: months 10-11, 0-1)
-  else if (currentMonth >= 10 || currentMonth <= 1) {
-    return [
-      {
-        id: 'sarson-ka-saag',
-        title: 'Sarson Ka Saag',
-        description: 'Hearty mustard greens curry with makki di roti.',
-        region: 'Punjab',
-        prepTime: 30,
-        cookTime: 45,
-        rating: 4.8,
-        servings: 4,
-        image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Sarson+Ka+Saag',
-        seasonal: true,
-        ingredients: [
-          '500g mustard greens, chopped',
-          '250g spinach, chopped',
-          '100g bathua leaves (optional)',
-          '2 tbsp cornmeal',
-          '1 tbsp ginger-garlic paste',
-          '2 green chilies',
-          '1 tsp cumin seeds',
-          '2 tbsp ghee',
-          'Salt to taste',
-          'Butter for serving'
-        ],
-        instructions: [
-          'Boil mustard greens, spinach, and bathua with salt until tender.',
-          'Blend to coarse paste or mash with wooden spoon.',
-          'Heat ghee and add cumin seeds.',
-          'Add ginger-garlic paste and green chilies.',
-          'Add the greens mixture and cornmeal.',
-          'Cook on low heat for 30 minutes, stirring occasionally.',
-          'Serve hot with butter and makki di roti.'
-        ]
-      },
-      {
-        id: 'gajar-ka-halwa',
+        id: 'gajar-halwa',
         title: 'Gajar Ka Halwa',
-        description: 'Sweet carrot pudding with cardamom and nuts.',
+        description: 'Rich carrot dessert perfect for winters.',
         region: 'North India',
         prepTime: 20,
-        cookTime: 40,
-        rating: 4.9,
+        cookTime: 45,
+        rating: 4.7,
+        difficulty: 'Medium',
         servings: 6,
-        image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Gajar+Ka+Halwa',
-        seasonal: true,
+        image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Gajar+Halwa',
         ingredients: [
-          '1 kg fresh carrots, grated',
+          '1 kg carrots, grated',
           '1 liter full-fat milk',
           '1/2 cup sugar',
           '4 tbsp ghee',
-          '1/2 tsp cardamom powder',
-          '1/4 cup almonds, chopped',
-          '1/4 cup pistachios, chopped',
-          '2 tbsp raisins'
+          '1/4 cup chopped almonds',
+          '1/4 cup raisins',
+          '4-5 cardamom pods, crushed',
+          'Silver leaf for garnish (optional)'
         ],
         instructions: [
-          'Heat ghee in a heavy-bottomed pan.',
-          'Add grated carrots and cook for 10 minutes.',
-          'Add milk and cook on medium heat until milk reduces.',
-          'Keep stirring occasionally to prevent sticking.',
-          'Add sugar and cardamom powder.',
-          'Cook until mixture thickens and leaves the sides.',
-          'Garnish with nuts and raisins. Serve warm.'
+          'Heat ghee in a heavy-bottom pan and add grated carrots.',
+          'Cook carrots for 10 minutes until they release moisture.',
+          'Add milk and cook on medium heat, stirring occasionally.',
+          'Cook until milk reduces and carrots become soft.',
+          'Add sugar and crushed cardamom, cook for 10 more minutes.',
+          'Add chopped almonds and raisins.',
+          'Cook until halwa thickens and starts leaving the sides.',
+          'Garnish with silver leaf and serve warm.'
         ]
       }
-    ];
-  }
-  
-  // Spring/Monsoon recipes (rest of the year)
-  else {
-    return [
+    ],
+    summer: [
+      {
+        id: 'mango-kulfi',
+        title: 'Mango Kulfi',
+        description: 'Traditional Indian ice cream with mango flavor.',
+        region: 'North India',
+        prepTime: 30,
+        cookTime: 10,
+        rating: 4.6,
+        difficulty: 'Easy',
+        servings: 8,
+        image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Mango+Kulfi',
+        ingredients: [
+          '1 liter full-fat milk',
+          '1/2 cup sugar',
+          '1 cup mango puree',
+          '2 tbsp cornstarch',
+          '4-5 cardamom pods, crushed',
+          '2 tbsp chopped pistachios',
+          'Kulfi molds or small glasses'
+        ],
+        instructions: [
+          'Boil milk in a heavy-bottom pan until it reduces to half.',
+          'Mix cornstarch with little milk and add to boiling milk.',
+          'Add sugar and crushed cardamom, cook for 5 minutes.',
+          'Let the milk mixture cool completely.',
+          'Add mango puree and mix well.',
+          'Pour into kulfi molds or glasses.',
+          'Freeze for 6-8 hours until set.',
+          'Garnish with chopped pistachios before serving.'
+        ]
+      }
+    ],
+    monsoon: [
       {
         id: 'pakoras',
-        title: 'Monsoon Pakoras',
-        description: 'Crispy vegetable fritters perfect for rainy evenings.',
-        region: 'All India',
-        prepTime: 15,
-        cookTime: 20,
-        rating: 4.7,
+        title: 'Mixed Vegetable Pakoras',
+        description: 'Crispy fritters perfect for rainy days.',
+        region: 'North India',
+        prepTime: 20,
+        cookTime: 25,
+        rating: 4.5,
+        difficulty: 'Easy',
         servings: 4,
         image: 'https://placehold.co/600x400/FFF8E1/E65100?text=Pakoras',
-        seasonal: true,
         ingredients: [
           '1 cup gram flour (besan)',
           '2 onions, thinly sliced',
@@ -814,15 +1482,18 @@ export const getSeasonalRecipes = () => {
           'Serve hot with mint chutney and tea.'
         ]
       }
-    ];
-  }
+    ]
+  };
 };
 
 export const getAllRecipes = () => {
+  const seasonalRecipes = getSeasonalRecipes();
   return [
     ...getFeaturedRecipes(),
     ...getAdditionalRecipes(),
-    ...getSeasonalRecipes(),
+    ...seasonalRecipes.winter,
+    ...seasonalRecipes.summer,
+    ...seasonalRecipes.monsoon,
   ];
 };
 

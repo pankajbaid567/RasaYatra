@@ -225,6 +225,30 @@
   border-bottom-left-radius: 4px;
 }
 
+/* Styling for formatted elements in bot messages */
+.message-text strong {
+  font-weight: 600;
+}
+
+.message-text em {
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.message-text ul {
+  margin: 5px 0;
+  padding-left: 20px;
+}
+
+.message-text li {
+  margin: 3px 0;
+  list-style-type: disc;
+}
+
+.message-text br {
+  margin-bottom: 4px;
+}
+
 .message-time {
   font-size: 11px;
   color: #888;

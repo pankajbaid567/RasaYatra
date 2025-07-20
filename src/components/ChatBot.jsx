@@ -18,13 +18,47 @@ const ChatBot = ({ pageContext = "general" }) => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Format message text to handle markdown-like formatting
+  const formatMessageText = (text) => {
+    if (!text) return '';
+    
+    let formattedText = text;
+    
+    // Handle bold text (enclosed in **double asterisks**)
+    formattedText = formattedText.replace(
+      /\*\*(.*?)\*\*/g, 
+      '<strong>$1</strong>'
+    );
+    
+    // Handle italic text (enclosed in *single asterisks*)
+    formattedText = formattedText.replace(
+      /\*([^*]+)\*/g,
+      '<em>$1</em>'
+    );
+    
+    // Handle bullet points (lines starting with *)
+    formattedText = formattedText.replace(
+      /^\* (.+)$/gm,
+      '<li>$1</li>'
+    );
+    
+    // Wrap consecutive list items in ul tags
+    formattedText = formattedText.replace(
+      /(<li>.+<\/li>\n*)+/g,
+      '<ul>$&</ul>'
+    );
+    
+    // Handle line breaks
+    return formattedText.replace(/\n/g, '<br>');
+  };
+
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
 
   // Context-aware prompts based on current page and content
   const getContextPrompt = () => {
-    const basePrompt = "You are RasaYatra's AI assistant, an expert in Indian cuisine and cooking. ";
+    const basePrompt = "You are RasaYatra's AI assistant, an expert in Indian cuisine and cooking. Format your responses with rich formatting: use **bold text** for emphasis by surrounding important terms with double asterisks, *italic* with single asterisks, and create bullet points by starting lines with an asterisk and space like '* Point one'. ";
     const allRecipes = getAllRecipes();
     const featuredRecipes = allRecipes.slice(0, 5).map(r => r.title).join(", ");
     
@@ -287,13 +321,13 @@ We cover all major regional cuisines including Punjab, South India, North India,
       case 'home':
         return "Welcome to RasaYatra! I can help you discover authentic Indian recipes, learn about regional cuisines, or navigate to our featured content. What are you interested in exploring today?";
       case 'recipes':
-        return "Looking for the perfect recipe? I can suggest dishes based on ingredients, cooking time, difficulty level, or regional preferences. What kind of dish are you craving today?";
+        return "Looking for the **perfect recipe**? I can suggest dishes based on ingredients, cooking time, difficulty level, or regional preferences. What kind of dish are you craving today?";
       case 'regions':
-        return "Exploring Indian regional cuisines? Each region has its unique flavors and techniques. Would you like to know more about a specific region or discover signature dishes from across India?";
+        return "Exploring **Indian regional cuisines**? Each region has its unique flavors and techniques. Would you like to know more about a specific region or discover signature dishes from across India?";
       case 'about':
         return "Thanks for visiting our About page! I'd be happy to share more about RasaYatra's mission, our journey documenting India's culinary heritage, or answer any questions about our platform.";
       default:
-        return "Hi! I'm RasaYatra's cooking assistant. I can help you with recipes, cooking techniques, ingredient questions, and share stories about Indian cuisine. How can I assist you today?";
+        return "Hi! I'm **RasaYatra's cooking assistant**. I can help you with:\n* Recipes and cooking techniques\n* Ingredient substitutions and tips\n* Regional Indian cuisines\n* Cultural stories behind dishes\n\nHow can I assist you with *Indian cuisine* today?";
     }
   };
 
@@ -347,7 +381,10 @@ We cover all major regional cuisines including Punjab, South India, North India,
                   {message.sender === 'user' ? <User size={16} /> : <Bot size={16} />}
                 </div>
                 <div className="message-content">
-                  <div className="message-text">{message.text}</div>
+                  <div 
+                    className="message-text"
+                    dangerouslySetInnerHTML={{ __html: formatMessageText(message.text) }}
+                  ></div>
                   <div className="message-time">
                     {message.timestamp.toLocaleTimeString([], { 
                       hour: '2-digit', 
