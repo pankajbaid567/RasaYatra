@@ -1,10 +1,17 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { AuthProvider } from './contexts/AuthContext';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import RecipeExplorer from './pages/RecipeExplorer';
+import LoginPage from './pages/LoginPage';
+import SignupPage from './pages/SignupPage';
+import FavoritesPage from './pages/FavoritesPage';
+import BookmarksPage from './pages/BookmarksPage';
+import ProfilePage from './pages/ProfilePage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import ProtectedRoute from './components/ProtectedRoute';
 import RegionExplorer from './pages/RegionExplorer';
 import RecipeDetail from './pages/RecipeDetail';
 import './App.css';
@@ -47,6 +54,23 @@ const AppContent = () => {
           <Route path="/recipes" element={<RecipeExplorer />} />
           <Route path="/recipes/:recipeId" element={<RecipeDetail />} />
           <Route path="/regions" element={<RegionExplorer />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/profile" element={
+            <ProtectedRoute>
+              <ProfilePage />
+            </ProtectedRoute>
+          } />
+          <Route path="/favorites" element={
+            <ProtectedRoute>
+              <FavoritesPage />
+            </ProtectedRoute>
+          } />
+          <Route path="/bookmarks" element={
+            <ProtectedRoute>
+              <BookmarksPage />
+            </ProtectedRoute>
+          } />
           {/* <Route path="*" element={<NotFound />} /> */}
         </Routes>
       </main>
@@ -58,9 +82,11 @@ const AppContent = () => {
 
 function App() {
   return (
-    <Router>
-      <AppContent />
-    </Router>
+    <AuthProvider>
+      <Router>
+        <AppContent />
+      </Router>
+    </AuthProvider>
   );
 }
 

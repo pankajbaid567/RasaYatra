@@ -1,29 +1,61 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MapPin, ChefHat, Utensils, Star, ArrowRight } from 'lucide-react';
-import { regions } from '../data/regions';
-import { getAllRecipes } from '../data/recipes';
+import { api } from '../services/api';
 import ChatBot from '../components/ChatBot';
 import '../styles/pages/RegionExplorer.css';
 
 const RegionExplorer = () => {
   const [selectedRegion, setSelectedRegion] = useState(null);
-  const allRecipes = getAllRecipes();
+  const [regions, setRegions] = useState([]);
+  const [recipes, setRecipes] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const [regionsData, recipesData] = await Promise.all([
+          api.getRegions(),
+          api.getRecipes()
+        ]);
+        setRegions(regionsData);
+        setRecipes(recipesData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const getRecipesByRegion = (regionName) => {
-    return allRecipes.filter(recipe => {
+    return recipes.filter(recipe => {
       const region = regions.find(r => r.name === regionName);
       if (!region) return false;
       
       // Check if recipe region matches any state in the region or the region name itself
-      return region.states.includes(recipe.region) || recipe.region === regionName;
+      return region.states?.includes(recipe.region) || recipe.region === regionName;
     });
   };
 
   const handleRegionClick = (region) => {
     setSelectedRegion(selectedRegion?.id === region.id ? null : region);
   };
+
+  if (loading) {
+    return (
+      <div className="region-explorer">
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <p>Loading regions...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="region-explorer">

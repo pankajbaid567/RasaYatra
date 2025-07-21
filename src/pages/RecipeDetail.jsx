@@ -13,33 +13,67 @@ import {
   Bookmark,
   CheckCircle
 } from 'lucide-react';
-import { getRecipeById, getAllRecipes } from '../data/recipes';
+import { api } from '../services/api';
+import { useAuth } from '../contexts/AuthContext';
 import ChatBot from '../components/ChatBot';
 import '../styles/pages/RecipeDetail.css';
 
 const RecipeDetail = () => {
   const { recipeId } = useParams();
   const navigate = useNavigate();
+  const { user } = useAuth();
   const [recipe, setRecipe] = useState(null);
   const [relatedRecipes, setRelatedRecipes] = useState([]);
   const [checkedIngredients, setCheckedIngredients] = useState({});
   const [checkedSteps, setCheckedSteps] = useState({});
   const [isFavorited, setIsFavorited] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [message, setMessage] = useState({ text: '', type: '' }); // 'success' or 'error'
 
   useEffect(() => {
-    const foundRecipe = getRecipeById(recipeId);
-    if (foundRecipe) {
-      setRecipe(foundRecipe);
-      
-      // Get related recipes from the same region
-      const allRecipes = getAllRecipes();
-      const related = allRecipes
-        .filter(r => r.region === foundRecipe.region && r.id !== foundRecipe.id)
-        .slice(0, 3);
-      setRelatedRecipes(related);
-    }
-  }, [recipeId]);
+    const fetchRecipeData = async () => {
+      try {
+        setLoading(true);
+        // Fetch the specific recipe
+        const foundRecipe = await api.getRecipeById(recipeId);
+        if (foundRecipe) {
+          setRecipe(foundRecipe);
+          
+          // Get related recipes from the same region
+          const allRecipes = await api.getRecipes();
+          const related = allRecipes
+            .filter(r => r.region === foundRecipe.region && r.id !== foundRecipe.id)
+            .slice(0, 3);
+          setRelatedRecipes(related);
+
+          // Check if recipe is favorited or bookmarked by current user
+          if (user) {
+            try {
+              const [favorites, bookmarks] = await Promise.all([
+                api.getFavorites(),
+                api.getBookmarks()
+              ]);
+              setIsFavorited(favorites.some(fav => fav.recipeId === foundRecipe.id));
+              setIsBookmarked(bookmarks.some(bookmark => bookmark.recipeId === foundRecipe.id));
+            } catch (error) {
+              console.error('Error checking favorites/bookmarks:', error);
+            }
+          }
+        } else {
+          // Recipe not found, redirect to recipes page
+          navigate('/recipes');
+        }
+      } catch (error) {
+        console.error('Error fetching recipe:', error);
+        navigate('/recipes');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRecipeData();
+  }, [recipeId, user, navigate]);
 
   const toggleIngredient = (index) => {
     setCheckedIngredients(prev => ({
@@ -55,6 +89,66 @@ const RecipeDetail = () => {
     }));
   };
 
+  const handleFavorite = async () => {
+    if (!user) {
+      navigate('/login');
+      return;
+    }
+
+    try {
+      if (isFavorited) {
+        await api.removeFavorite(recipe.id);
+        setIsFavorited(false);
+        setMessage({ text: 'Recipe removed from favorites', type: 'success' });
+      } else {
+        const result = await api.addFavorite(recipe.id);
+        if (result?.alreadyExists) {
+          setMessage({ text: result.message, type: 'success' });
+          setIsFavorited(true); // Update UI state to reflect reality
+        } else {
+          setIsFavorited(true);
+          setMessage({ text: 'Recipe added to favorites', type: 'success' });
+        }
+      }
+      // Clear message after 3 seconds
+      setTimeout(() => setMessage({ text: '', type: '' }), 3000);
+    } catch (error) {
+      console.error('Error toggling favorite:', error);
+      setMessage({ text: 'Failed to update favorites', type: 'error' });
+      setTimeout(() => setMessage({ text: '', type: '' }), 3000);
+    }
+  };
+
+  const handleBookmark = async () => {
+    if (!user) {
+      navigate('/login');
+      return;
+    }
+
+    try {
+      if (isBookmarked) {
+        await api.removeBookmark(recipe.id);
+        setIsBookmarked(false);
+        setMessage({ text: 'Recipe removed from bookmarks', type: 'success' });
+      } else {
+        const result = await api.addBookmark(recipe.id);
+        if (result?.alreadyExists) {
+          setMessage({ text: result.message, type: 'success' });
+          setIsBookmarked(true); // Update UI state to reflect reality
+        } else {
+          setIsBookmarked(true);
+          setMessage({ text: 'Recipe added to bookmarks', type: 'success' });
+        }
+      }
+      // Clear message after 3 seconds
+      setTimeout(() => setMessage({ text: '', type: '' }), 3000);
+    } catch (error) {
+      console.error('Error toggling bookmark:', error);
+      setMessage({ text: 'Failed to update bookmarks', type: 'error' });
+      setTimeout(() => setMessage({ text: '', type: '' }), 3000);
+    }
+  };
+
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
@@ -67,6 +161,17 @@ const RecipeDetail = () => {
       // You could show a toast notification here
     }
   };
+
+  if (loading) {
+    return (
+      <div className="recipe-detail">
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <p>Loading recipe...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!recipe) {
     return (
@@ -124,14 +229,16 @@ const RecipeDetail = () => {
                 <div className="recipe-actions">
                   <button 
                     className={`action-button ${isFavorited ? 'active' : ''}`}
-                    onClick={() => setIsFavorited(!isFavorited)}
+                    onClick={handleFavorite}
+                    title={isFavorited ? 'Remove from favorites' : 'Add to favorites'}
                   >
                     <Heart className="icon" />
                     {isFavorited ? 'Favorited' : 'Favorite'}
                   </button>
                   <button 
                     className={`action-button ${isBookmarked ? 'active' : ''}`}
-                    onClick={() => setIsBookmarked(!isBookmarked)}
+                    onClick={handleBookmark}
+                    title={isBookmarked ? 'Remove from bookmarks' : 'Add to bookmarks'}
                   >
                     <Bookmark className="icon" />
                     {isBookmarked ? 'Saved' : 'Save'}
@@ -141,6 +248,19 @@ const RecipeDetail = () => {
                     Share
                   </button>
                 </div>
+
+                {/* Message display */}
+                {message.text && (
+                  <motion.div 
+                    className={`message ${message.type}`}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                  >
+                    <CheckCircle className="message-icon" />
+                    {message.text}
+                  </motion.div>
+                )}
               </motion.div>
 
               <motion.div 
@@ -210,7 +330,17 @@ const RecipeDetail = () => {
                     onClick={() => toggleIngredient(index)}
                   >
                     <CheckCircle className="check-icon" />
-                    <span className="ingredient-text">{ingredient}</span>
+                    <div className="ingredient-content">
+                      <span className="ingredient-text">
+                        {typeof ingredient === 'string' 
+                          ? ingredient 
+                          : `${ingredient.name} - ${ingredient.quantity}`
+                        }
+                      </span>
+                      {typeof ingredient === 'object' && ingredient.healthBenefits && (
+                        <p className="ingredient-benefits">{ingredient.healthBenefits}</p>
+                      )}
+                    </div>
                   </motion.div>
                 ))}
               </div>

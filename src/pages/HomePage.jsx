@@ -1,14 +1,38 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Map } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { getFeaturedRecipes, getSeasonalRecipes } from '../data/recipes';
+import { useState, useEffect } from 'react';
+import { api } from '../services/api';
 import ChatBot from '../components/ChatBot';
 import '../styles/pages/HomePage.css';
 import React from 'react';
 
 const HomePage = () => {
-  const featuredRecipes = getFeaturedRecipes();
-  const seasonalRecipes = getSeasonalRecipes();
+  const [featuredRecipes, setFeaturedRecipes] = useState([]);
+  const [regions, setRegions] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const [recipesResponse, regionsResponse] = await Promise.all([
+        api.getFeaturedRecipes(6),
+        api.getRegions()
+      ]);
+      
+      setFeaturedRecipes(recipesResponse || []);
+      setRegions(regionsResponse || []);
+    } catch (error) {
+      console.error('Error fetching homepage data:', error);
+      setFeaturedRecipes([]);
+      setRegions([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="home-page">
@@ -62,29 +86,43 @@ const HomePage = () => {
             </Link>
           </div>
           <div className="recipe-grid">
-            {featuredRecipes.map((recipe, index) => (
-              <motion.div
-                key={recipe.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-              >
-                <Link to={`/recipes/${recipe.id}`} className="recipe-card">
-                  <div className="recipe-image-container">
-                    <img src={recipe.image} alt={recipe.title} className="recipe-image" />
-                    <div className="recipe-region">{recipe.region}</div>
-                  </div>
-                  <div className="recipe-info">
-                    <h3 className="recipe-title">{recipe.title}</h3>
-                    <p className="recipe-description">{recipe.description}</p>
-                    <div className="recipe-meta">
-                      <span className="recipe-time">{recipe.prepTime + recipe.cookTime} mins</span>
-                      <span className="recipe-rating">{recipe.rating} ★</span>
+            {loading ? (
+              <div className="loading-grid">
+                {[...Array(6)].map((_, index) => (
+                  <div key={index} className="recipe-card loading">
+                    <div className="recipe-image loading-shimmer"></div>
+                    <div className="recipe-info">
+                      <div className="loading-text"></div>
+                      <div className="loading-text short"></div>
                     </div>
                   </div>
-                </Link>
-              </motion.div>
-            ))}
+                ))}
+              </div>
+            ) : (
+              featuredRecipes.map((recipe, index) => (
+                <motion.div
+                  key={recipe.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <Link to={`/recipes/${recipe.id}`} className="recipe-card">
+                    <div className="recipe-image-container">
+                      <img src={recipe.image || '/images/default-recipe.jpg'} alt={recipe.title} className="recipe-image" />
+                      <div className="recipe-region">{recipe.region}</div>
+                    </div>
+                    <div className="recipe-info">
+                      <h3 className="recipe-title">{recipe.title}</h3>
+                      <p className="recipe-description">{recipe.description}</p>
+                      <div className="recipe-meta">
+                        <span className="recipe-time">{recipe.prepTime + recipe.cookTime} mins</span>
+                        <span className="recipe-rating">{recipe.rating} ★</span>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))
+            )}
           </div>
         </div>
       </section>
@@ -119,40 +157,6 @@ const HomePage = () => {
           </motion.div>
         </div>
       </section>
-
-      {seasonalRecipes.length > 0 && (
-        <section className="seasonal-section">
-          <div className="container">
-            <div className="section-header">
-              <h2 className="section-title">Seasonal Delights</h2>
-              <Link to="/seasonal" className="view-all-link">
-                View All <ArrowRight className="icon" />
-              </Link>
-            </div>
-            <div className="seasonal-grid">
-              {seasonalRecipes.map((recipe, index) => (
-                <motion.div
-                  key={recipe.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                >
-                  <Link to={`/recipes/${recipe.id}`} className="seasonal-card">
-                    <div className="seasonal-image-container">
-                      <img src={recipe.image} alt={recipe.title} className="seasonal-image" />
-                    </div>
-                    <div className="seasonal-info">
-                      <h3 className="seasonal-title">{recipe.title}</h3>
-                      <p className="seasonal-description">{recipe.description}</p>
-                      <span className="seasonal-tag">Seasonal Special</span>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
       
       <ChatBot pageContext="home" />
     </div>

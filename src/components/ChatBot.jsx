@@ -2,8 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { sendMessageToGemini } from '../services/geminiService';
-import { getRecipeById, getAllRecipes } from '../data/recipes';
-import { regions } from '../data/regions';
+import { api } from '../services/api';
 import './ChatBot.css';
 
 const ChatBot = ({ pageContext = "general" }) => {
@@ -11,8 +10,38 @@ const ChatBot = ({ pageContext = "general" }) => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [recipes, setRecipes] = useState([]);
+  const [regions, setRegions] = useState([]);
+  const [dataLoaded, setDataLoaded] = useState(false);
   const messagesEndRef = useRef(null);
   const navigate = useNavigate();
+
+  // Fetch data when component mounts
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [recipesData, regionsData] = await Promise.all([
+          api.getRecipes(),
+          api.getRegions()
+        ]);
+        setRecipes(recipesData);
+        setRegions(regionsData);
+        setDataLoaded(true);
+      } catch (error) {
+        console.error('Error fetching data for ChatBot:', error);
+        setDataLoaded(true); // Continue without data
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // Helper functions to mimic the static data functions
+  const getAllRecipes = () => recipes;
+  
+  const getRecipeById = (id) => {
+    return recipes.find(recipe => recipe.id === parseInt(id) || recipe.id === id);
+  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -58,9 +87,13 @@ const ChatBot = ({ pageContext = "general" }) => {
 
   // Context-aware prompts based on current page and content
   const getContextPrompt = () => {
+    if (!dataLoaded) {
+      return "You are RasaYatra's AI assistant, an expert in Indian cuisine and cooking. Format your responses with rich formatting: use **bold text** for emphasis by surrounding important terms with double asterisks, *italic* with single asterisks, and create bullet points by starting lines with an asterisk and space like '* Point one'. ";
+    }
+
     const basePrompt = "You are RasaYatra's AI assistant, an expert in Indian cuisine and cooking. Format your responses with rich formatting: use **bold text** for emphasis by surrounding important terms with double asterisks, *italic* with single asterisks, and create bullet points by starting lines with an asterisk and space like '* Point one'. ";
     const allRecipes = getAllRecipes();
-    const featuredRecipes = allRecipes.slice(0, 5).map(r => r.title).join(", ");
+    const featuredRecipes = allRecipes.length > 0 ? allRecipes.slice(0, 5).map(r => r.title).join(", ") : "various Indian dishes";
     
     // Check if we're on a specific recipe page
     if (pageContext.startsWith('recipe-detail:')) {
@@ -68,10 +101,14 @@ const ChatBot = ({ pageContext = "general" }) => {
       const recipe = getRecipeById(recipeId);
       
       if (recipe) {
+        const ingredientsText = Array.isArray(recipe.ingredients) 
+          ? recipe.ingredients.map(ing => typeof ing === 'object' ? ing.name : ing).join(', ')
+          : 'various ingredients';
+          
         return `${basePrompt} 
 You are currently helping with the recipe: "${recipe.title}" from the ${recipe.region} region. 
 Key details: Prep time: ${recipe.prepTime} min, Cook time: ${recipe.cookTime} min, Rating: ${recipe.rating}/5, Servings: ${recipe.servings}.
-Ingredients: ${recipe.ingredients.join(', ')}
+Ingredients: ${ingredientsText}
 This dish is ${recipe.seasonal ? 'seasonal and' : ''} known for: ${recipe.description}
 
 You should explain cooking techniques, suggest modifications, help with ingredient substitutions, provide cultural context, and answer questions about this specific recipe. If asked about other recipes, you can suggest similar dishes or complementary sides from the same region.`;
@@ -168,18 +205,22 @@ We cover all major regional cuisines including Punjab, South India, North India,
       }
     }
     
-    // Check for recipe search
-    const allRecipes = getAllRecipes();
-    for (const recipe of allRecipes) {
-      if (lowerMessage.includes(recipe.title.toLowerCase())) {
-        return { type: 'specific-recipe', id: recipe.id };
+    // Check for recipe search - only if data is loaded
+    if (dataLoaded && recipes.length > 0) {
+      const allRecipes = getAllRecipes();
+      for (const recipe of allRecipes) {
+        if (lowerMessage.includes(recipe.title.toLowerCase())) {
+          return { type: 'specific-recipe', id: recipe.id };
+        }
       }
     }
     
-    // Check for region search
-    for (const region of regions) {
-      if (lowerMessage.includes(region.name.toLowerCase())) {
-        return { type: 'specific-region', id: region.id };
+    // Check for region search - only if data is loaded  
+    if (dataLoaded && regions.length > 0) {
+      for (const region of regions) {
+        if (lowerMessage.includes(region.name.toLowerCase())) {
+          return { type: 'specific-region', id: region.id };
+        }
       }
     }
     
