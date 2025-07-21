@@ -10,7 +10,7 @@ export const useAuth = () => {
   return context;
 };
 
-const API_BASE_URL = 'http://backend-rasayatra-production.up.railway.app/api';
+const API_BASE_URL = 'https://backend-rasayatra-production.up.railway.app/api';
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
