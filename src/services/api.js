@@ -72,6 +72,10 @@ class ApiService {
     return response?.data?.recipe || response?.recipe || response;
   }
 
+  async getRecipeById(id) {
+    return this.getRecipe(id);
+  }
+
   async createRecipe(recipeData) {
     return this.request('/recipes', {
       method: 'POST',
@@ -176,6 +180,15 @@ class ApiService {
 
   async getRegionStats(id) {
     return this.request(`/regions/${id}/stats`);
+  }
+
+  // Alias methods for backward compatibility
+  async addFavorite(recipeId) {
+    return this.addToFavorites(recipeId);
+  }
+
+  async removeFavorite(recipeId) {
+    return this.removeFromFavorites(recipeId);
   }
 }
 
