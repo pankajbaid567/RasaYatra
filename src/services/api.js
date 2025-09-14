@@ -182,6 +182,69 @@ class ApiService {
     return this.request(`/regions/${id}/stats`);
   }
 
+  // Community endpoints
+  async getCommunityPosts(params = {}) {
+    const queryString = new URLSearchParams(params).toString();
+    const response = await this.request(`/community${queryString ? `?${queryString}` : ''}`);
+    return response?.data || response;
+  }
+
+  async getCommunityPost(id) {
+    const response = await this.request(`/community/${id}`);
+    return response?.data?.post || response?.post || response;
+  }
+
+  async createCommunityPost(postData) {
+    return this.request('/community', {
+      method: 'POST',
+      body: JSON.stringify(postData),
+    });
+  }
+
+  async updateCommunityPost(id, postData) {
+    return this.request(`/community/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(postData),
+    });
+  }
+
+  async deleteCommunityPost(id) {
+    return this.request(`/community/${id}`, {
+      method: 'DELETE',
+    });
+  }
+
+  async likeCommunityPost(id) {
+    return this.request(`/community/${id}/like`, {
+      method: 'POST',
+    });
+  }
+
+  async addCommentToPost(postId, content) {
+    return this.request(`/community/${postId}/comments`, {
+      method: 'POST',
+      body: JSON.stringify({ content }),
+    });
+  }
+
+  async getPostComments(postId, params = {}) {
+    const queryString = new URLSearchParams(params).toString();
+    const response = await this.request(`/community/${postId}/comments${queryString ? `?${queryString}` : ''}`);
+    return response?.data || response;
+  }
+
+  async deleteComment(commentId) {
+    return this.request(`/community/comments/${commentId}`, {
+      method: 'DELETE',
+    });
+  }
+
+  async getUserPosts(userId, params = {}) {
+    const queryString = new URLSearchParams(params).toString();
+    const response = await this.request(`/community/user/${userId}${queryString ? `?${queryString}` : ''}`);
+    return response?.data || response;
+  }
+
   // Alias methods for backward compatibility
   async addFavorite(recipeId) {
     return this.addToFavorites(recipeId);

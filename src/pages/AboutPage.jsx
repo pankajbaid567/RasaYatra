@@ -124,6 +124,31 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Technical Overview Section */}
+      <section className="tech-section">
+        <div className="container">
+          <motion.div 
+            className="tech-content"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="section-title">Built with Modern Technology</h2>
+            <div className="tech-description">
+              <p className="tech-highlight">
+                <strong>RasaYatra is a cutting-edge culinary platform built with React.js, React Router, CSS, and Framer Motion on the frontend, powered by Express.js, Prisma ORM, and PostgreSQL on the backend, featuring a fully responsive UI with smooth animations and comprehensive error handling.</strong>
+              </p>
+              <p className="tech-highlight">
+                <strong>Our platform enables users to search and discover authentic Indian recipes in milliseconds with lightning-fast performance, helping food enthusiasts expand their chef skills through a vast collection of traditional and regional recipes.</strong>
+              </p>
+              <p className="tech-highlight">
+                <strong>With planned integration of advanced features and an ever-growing database of authentic recipes, RasaYatra serves as the ultimate digital companion for exploring India's rich culinary heritage.</strong>
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="features-section">
         <div className="container">

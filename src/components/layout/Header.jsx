@@ -37,6 +37,7 @@ const Header = () => {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/recipes">Explore</Link></li>
           <li><Link to="/regions">Regions</Link></li>
+          <li><Link to="/community">Community</Link></li>
           <li><Link to="/about">About</Link></li>
         </ul>
       </motion.nav>
@@ -92,6 +93,7 @@ const Header = () => {
           <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link>
           <Link to="/recipes" onClick={() => setIsMenuOpen(false)}>Explore</Link>
           <Link to="/regions" onClick={() => setIsMenuOpen(false)}>Regions</Link>
+          <Link to="/community" onClick={() => setIsMenuOpen(false)}>Community</Link>
           <Link to="/about" onClick={() => setIsMenuOpen(false)}>About</Link>
           
           {isAuthenticated ? (

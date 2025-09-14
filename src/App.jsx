@@ -9,6 +9,7 @@ import SignupPage from './pages/SignupPage';
 import FavoritesPage from './pages/FavoritesPage';
 import BookmarksPage from './pages/BookmarksPage';
 import ProfilePage from './pages/ProfilePage';
+import CommunityPage from './pages/CommunityPage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -40,6 +41,7 @@ const AppContent = () => {
     if (currentPath === '/about') return 'about';
     if (currentPath === '/recipes') return 'recipes';
     if (currentPath === '/regions') return 'regions';
+    if (currentPath === '/community') return 'community';
     if (currentPath.startsWith('/recipes/') && recipeId) return `recipe-detail:${recipeId}`;
     return 'general';
   };
@@ -54,6 +56,7 @@ const AppContent = () => {
           <Route path="/recipes" element={<RecipeExplorer />} />
           <Route path="/recipes/:recipeId" element={<RecipeDetail />} />
           <Route path="/regions" element={<RegionExplorer />} />
+          <Route path="/community" element={<CommunityPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/profile" element={

@@ -104,6 +104,43 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
+/* Technical Overview Section */
+.tech-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: white;
+}
+
+.tech-content {
+  text-align: center;
+}
+
+.tech-section .section-title {
+  color: #E65100;
+  margin-bottom: 3rem;
+}
+
+.tech-description {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tech-highlight {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: rgba(230, 81, 0, 0.1);
+  border-left: 4px solid #E65100;
+  border-radius: 0.5rem;
+  text-align: left;
+}
+
+.tech-highlight strong {
+  color: #FFB74D;
+  font-weight: 600;
+}
+
 /* Story Section */
 .story-section {
   padding: 6rem 0;
@@ -310,10 +347,16 @@
   }
   
   .mission-section,
+  .tech-section,
   .story-section,
   .features-section,
   .cta-section {
     padding: 4rem 0;
+  }
+  
+  .tech-highlight {
+    font-size: 1rem;
+    padding: 1.25rem;
   }
   
   .section-title {
