@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://backend-rasayatra-production.up.railway.app/api';
+const API_BASE_URL = 'https://backend-rasayatra-production-8787.up.railway.app/api';
 
 class ApiService {
   constructor() {
