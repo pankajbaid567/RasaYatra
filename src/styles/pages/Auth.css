@@ -13,7 +13,7 @@
   padding: 40px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
   position: relative;
   overflow: hidden;
 }
@@ -26,6 +26,75 @@
   right: 0;
   height: 4px;
   background: linear-gradient(90deg, #ff6b35, #f7931e, #ff6b35);
+}
+
+/* Welcome Banner */
+.welcome-banner {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: linear-gradient(135deg, #FFF8E1 0%, #FFFAF0 100%);
+  border: 2px solid #FFE0B2;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.welcome-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.welcome-message {
+  flex: 1;
+}
+
+.welcome-message strong {
+  color: #E65100;
+  font-size: 1rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.welcome-message p {
+  color: #5D4037;
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Features Preview */
+.features-preview {
+  background: #F8F9FA;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 30px 0 20px 0;
+}
+
+.features-preview h3 {
+  color: #2d3748;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+}
+
+.features-preview ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-preview li {
+  color: #4a5568;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  padding-left: 5px;
+  line-height: 1.4;
+}
+
+.features-preview li:last-child {
+  margin-bottom: 0;
 }
 
 .auth-header {
@@ -186,4 +255,73 @@
 @keyframes spin {
   0% { transform: translateY(-50%) rotate(0deg); }
   100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 15px;
+    min-height: 100vh;
+  }
+  
+  .auth-card {
+    padding: 30px 25px;
+    max-width: 100%;
+  }
+  
+  .welcome-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .welcome-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .auth-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .features-preview {
+    padding: 15px;
+    margin: 20px 0 15px 0;
+  }
+  
+  .features-preview h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+  
+  .features-preview li {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 25px 20px;
+  }
+  
+  .auth-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .auth-header p {
+    font-size: 0.95rem;
+  }
+  
+  .welcome-banner {
+    padding: 12px;
+  }
+  
+  .welcome-message strong {
+    font-size: 0.95rem;
+  }
+  
+  .welcome-message p {
+    font-size: 0.85rem;
+  }
 }

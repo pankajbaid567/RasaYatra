@@ -13,9 +13,11 @@ import CommunityPage from './pages/CommunityPage';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import ProtectedRoute from './components/ProtectedRoute';
+import AuthGuard from './components/AuthGuard';
 import RegionExplorer from './pages/RegionExplorer';
 import RecipeDetail from './pages/RecipeDetail';
 import './App.css';
+import './styles/responsive-utils.css';
 import ChatBot from './components/ChatBot';
 
 // Content component that has access to location
@@ -47,39 +49,41 @@ const AppContent = () => {
   };
 
   return (
-    <div className="app-container">
-      <Header />
-      <main className="main-content">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/recipes" element={<RecipeExplorer />} />
-          <Route path="/recipes/:recipeId" element={<RecipeDetail />} />
-          <Route path="/regions" element={<RegionExplorer />} />
-          <Route path="/community" element={<CommunityPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
-          <Route path="/profile" element={
-            <ProtectedRoute>
-              <ProfilePage />
-            </ProtectedRoute>
-          } />
-          <Route path="/favorites" element={
-            <ProtectedRoute>
-              <FavoritesPage />
-            </ProtectedRoute>
-          } />
-          <Route path="/bookmarks" element={
-            <ProtectedRoute>
-              <BookmarksPage />
-            </ProtectedRoute>
-          } />
-          {/* <Route path="*" element={<NotFound />} /> */}
-        </Routes>
-      </main>
-      <Footer />
-      <ChatBot pageContext={getChatBotContext()} />
-    </div>
+    <AuthGuard>
+      <div className="app-container">
+        <Header />
+        <main id="main-content" className="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/recipes" element={<RecipeExplorer />} />
+            <Route path="/recipes/:recipeId" element={<RecipeDetail />} />
+            <Route path="/regions" element={<RegionExplorer />} />
+            <Route path="/community" element={<CommunityPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/profile" element={
+              <ProtectedRoute>
+                <ProfilePage />
+              </ProtectedRoute>
+            } />
+            <Route path="/favorites" element={
+              <ProtectedRoute>
+                <FavoritesPage />
+              </ProtectedRoute>
+            } />
+            <Route path="/bookmarks" element={
+              <ProtectedRoute>
+                <BookmarksPage />
+              </ProtectedRoute>
+            } />
+            {/* <Route path="*" element={<NotFound />} /> */}
+          </Routes>
+        </main>
+        <Footer />
+        <ChatBot pageContext={getChatBotContext()} />
+      </div>
+    </AuthGuard>
   );
 };
 

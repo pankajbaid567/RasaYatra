@@ -39,9 +39,15 @@
 
 .mission-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: 1fr;
+  gap: var(--fluid-space-lg);
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .mission-content {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .section-title {
@@ -297,16 +303,17 @@
 }
 
 .secondary-button {
-  background-color: transparent;
+  background-color: #E65100;
   color: white;
-  border: 2px solid white;
+  border: 2px solid #E65100;
+  box-shadow: 0 4px 10px rgba(230, 81, 0, 0.2);
 }
 
 .secondary-button:hover {
-  background-color: white;
-  color: #E65100;
+  background-color: #d04800;
+  color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 6px 15px rgba(230, 81, 0, 0.25);
 }
 
 /* Responsive Styles */

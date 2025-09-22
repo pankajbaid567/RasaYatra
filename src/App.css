@@ -1,48 +1,162 @@
 /* Global Styles */
-html{
-  scroll-behavior: smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px; /* Base font size for rem calculations */
+  margin: 0;
+  padding: 0;
+}
+
 :root {
+  /* Brand Colors */
   --primary-color: #E65100;
   --secondary-color: #4CAF50;
   --accent-color: #FFC107;
   --dark-color: #3E2723;
   --light-color: #FFF8E1;
+  
+  /* Extended Color Palette */
+  --primary-50: #FFF3E0;
+  --primary-100: #FFE0B2;
+  --primary-200: #FFCC80;
+  --primary-500: #E65100;
+  --primary-700: #D84315;
+  --primary-900: #BF360C;
+  
+  /* Neutral Colors */
+  --gray-50: #FAFAFA;
+  --gray-100: #F5F5F5;
+  --gray-200: #EEEEEE;
+  --gray-300: #E0E0E0;
+  --gray-400: #BDBDBD;
+  --gray-500: #9E9E9E;
+  --gray-600: #757575;
+  --gray-700: #616161;
+  --gray-800: #424242;
+  --gray-900: #212121;
+  
+  /* Responsive Spacing System */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  
+  /* Fluid Spacing (scales with screen size) */
+  --fluid-space-sm: clamp(1rem, 2.5vw, 1.5rem);
+  --fluid-space-md: clamp(1.5rem, 4vw, 2.5rem);
+  --fluid-space-lg: clamp(2rem, 6vw, 4rem);
+  --fluid-space-xl: clamp(3rem, 8vw, 6rem);
+  
+  /* Typography Scale */
+  --text-xs: clamp(0.75rem, 0.8rem + 0.2vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.9rem + 0.3vw, 1rem);
+  --text-base: clamp(1rem, 1rem + 0.4vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1.1rem + 0.5vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.2rem + 0.6vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.4rem + 0.8vw, 2rem);
+  --text-3xl: clamp(2rem, 1.8rem + 1vw, 2.5rem);
+  --text-4xl: clamp(2.5rem, 2.2rem + 1.5vw, 3.5rem);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+  
+  /* Breakpoints (for JavaScript usage) */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+  --bp-2xl: 1536px;
+  
+  /* Z-index scale */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
 }
 
 #root {
-  max-width: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   text-align: left;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .app-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-/* Header Styles */
+/* Ensure all main content is accessible */
+.app-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== HEADER STYLES ===== */
 .header {
   background-color: var(--primary-color);
   color: white;
-  padding: 1rem 2rem;
+  padding: var(--fluid-space-sm) var(--fluid-space-md);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
+  box-shadow: var(--shadow-md);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sticky);
+  transition: all 0.3s ease;
+  margin: 0;
+  width: 100%;
 }
 
 .logo-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .logo-link {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .logo-link:hover {
@@ -52,14 +166,19 @@ html{
 .logo {
   margin: 0;
   font-family: 'Kalam', cursive;
-  font-size: 2.5rem;
+  font-size: var(--text-3xl);
   color: white;
+  line-height: 1.2;
 }
 
 .tagline {
   margin: 0;
-  font-size: 0.9rem;
-  opacity: 0.9;
+  margin-top: -0.2rem;
+  font-size: var(--text-xs);
+  opacity: 0.85;
+  line-height: 1.2;
+  font-weight: 400;
+  white-space: nowrap;
 }
 
 .main-nav ul {
@@ -67,21 +186,28 @@ html{
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 1.5rem;
+  gap: var(--space-6);
+  align-items: center;
 }
 
 .main-nav a {
   color: white;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 500;
-  padding: 0.5rem 0;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 44px; /* Touch target */
+  display: flex;
+  align-items: center;
 }
 
-.main-nav a:hover {
-  border-color: white;
+.main-nav a:hover,
+.main-nav a:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
 }
 
 /* Auth Section Styles */
@@ -212,15 +338,57 @@ html{
   border-bottom-right-radius: 8px;
 }
 
-/* Mobile Menu Styles */
+/* ===== MOBILE NAVIGATION ===== */
 .mobile-menu-button {
   display: none;
   background: none;
   border: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: var(--text-xl);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-menu-button:hover,
+.mobile-menu-button:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Hamburger Icon Animation */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  width: 20px;
+  height: 16px;
+  justify-content: space-between;
+}
+
+.hamburger-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Animated hamburger when menu is open */
+.mobile-menu-button[aria-expanded="true"] .hamburger-icon span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-button[aria-expanded="true"] .hamburger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-button[aria-expanded="true"] .hamburger-icon span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .mobile-menu {
@@ -230,13 +398,15 @@ html{
   left: 0;
   right: 0;
   background: var(--primary-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
+  box-shadow: var(--shadow-xl);
+  z-index: var(--z-dropdown);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.mobile-menu a, .mobile-menu button {
+.mobile-menu a, 
+.mobile-menu button {
   display: block;
-  padding: 1rem 2rem;
+  padding: var(--space-4) var(--space-6);
   color: white;
   text-decoration: none;
   border: none;
@@ -245,17 +415,28 @@ html{
   text-align: left;
   cursor: pointer;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
+  font-size: var(--text-base);
+  min-height: 48px; /* Larger touch target on mobile */
+  display: flex;
+  align-items: center;
 }
 
-.mobile-menu a:hover, .mobile-menu button:hover {
-  background: rgba(255, 255, 255, 0.1);
+.mobile-menu a:hover, 
+.mobile-menu button:hover,
+.mobile-menu a:focus,
+.mobile-menu button:focus {
+  background: rgba(255, 255, 255, 0.15);
+  padding-left: var(--space-8); /* Subtle indent on hover */
 }
 
-/* Main Content Styles */
+/* ===== MAIN CONTENT ===== */
 .main-content {
   flex: 1;
-  padding: 2rem;
+  padding: 0; /* Remove default padding - let individual pages control their spacing */
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin-top: 80px; /* Account for fixed header */
 }
 
 /* Loading Styles */
@@ -321,19 +502,28 @@ html{
   margin-top: auto;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet and Mobile */
+@media (max-width: 1023px) {
   .header {
-    padding: 1rem;
     flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+}
+
+/* Tablet */
+@media (max-width: 767px) {
+  .header {
+    padding: var(--space-3) var(--space-4);
   }
   
   .logo {
-    font-size: 2rem;
+    font-size: var(--text-2xl);
   }
 
   .tagline {
-    font-size: 0.8rem;
+    font-size: var(--text-xs);
   }
   
   .main-nav {
@@ -349,7 +539,7 @@ html{
   }
   
   .mobile-menu-button {
-    display: block;
+    display: flex;
   }
   
   .mobile-menu {
@@ -357,7 +547,7 @@ html{
   }
   
   .auth-section {
-    gap: 0.5rem;
+    gap: var(--space-2);
   }
   
   .user-dropdown {
@@ -366,38 +556,68 @@ html{
     min-width: 160px;
   }
   
-  .main-content {
-    padding: 1rem;
-  }
-  
   .hero-section h2 {
-    font-size: 1.8rem;
+    font-size: var(--text-2xl);
   }
   
   .hero-section p {
-    font-size: 1rem;
+    font-size: var(--text-base);
   }
   
   .map-section {
-    height: 60vh;
+    min-height: 60vh;
   }
 }
 
-@media (max-width: 480px) {
+/* Mobile */
+@media (max-width: 479px) {
   .header {
-    padding: 0.75rem;
+    padding: var(--space-3);
   }
   
   .logo {
-    font-size: 1.8rem;
+    font-size: var(--text-xl);
+  }
+  
+  .tagline {
+    display: none; /* Hide on very small screens */
   }
   
   .user-button {
-    padding: 0.4rem 0.8rem;
+    padding: var(--space-2) var(--space-3);
   }
   
   .user-avatar {
     width: 28px;
     height: 28px;
+    font-size: var(--text-xs);
+  }
+  
+  .mobile-menu a, 
+  .mobile-menu button {
+    padding: var(--space-4);
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .header {
+    padding: var(--space-5) var(--space-8);
+  }
+  
+  .logo {
+    font-size: var(--text-4xl);
+  }
+  
+  .main-nav ul {
+    gap: var(--space-8);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }

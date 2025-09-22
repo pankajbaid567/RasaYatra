@@ -1,0 +1,137 @@
+/* Accessibility and Touch Improvements */
+
+/* ===== FOCUS MANAGEMENT ===== */
+*:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* ===== IMPROVED BUTTON ACCESSIBILITY ===== */
+button, 
+.btn, 
+[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Larger touch targets on mobile */
+@media (max-width: 767px) {
+  button, 
+  .btn, 
+  [role="button"] {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+/* ===== FORM ACCESSIBILITY ===== */
+input, 
+textarea, 
+select {
+  font-size: 16px; /* Prevent zoom on iOS */
+  min-height: 44px;
+}
+
+@media (max-width: 767px) {
+  input, 
+  textarea, 
+  select {
+    min-height: 48px;
+  }
+}
+
+/* ===== LINK ACCESSIBILITY ===== */
+a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== SKIP NAVIGATION ===== */
+.skip-nav {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 9999;
+  font-weight: 600;
+}
+
+.skip-nav:focus {
+  top: 6px;
+}
+
+/* ===== SCREEN READER UTILITIES ===== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .card, 
+  .recipe-card, 
+  .post-card {
+    border: 2px solid;
+  }
+  
+  .btn {
+    border: 2px solid;
+  }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --gray-50: #1A1A1A;
+    --gray-100: #262626;
+    --gray-200: #404040;
+    --gray-300: #525252;
+    --gray-400: #737373;
+    --gray-500: #A3A3A3;
+    --gray-600: #D4D4D4;
+    --gray-700: #E5E5E5;
+    --gray-800: #F5F5F5;
+    --gray-900: #FAFAFA;
+  }
+}

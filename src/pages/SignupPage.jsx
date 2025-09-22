@@ -66,9 +66,17 @@ const SignupPage = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
+        <div className="welcome-banner">
+          <div className="welcome-icon">🍽️</div>
+          <div className="welcome-message">
+            <strong>Authentication Required</strong>
+            <p>Please create an account to access RasaYatra's features including recipe collections, favorites, and community interactions.</p>
+          </div>
+        </div>
+        
         <div className="auth-header">
-          <h1>Join RasaYatra!</h1>
-          <p>Create your account to explore delicious recipes</p>
+          <h1>Create Your Account</h1>
+          <p>Join our culinary community to explore authentic Indian recipes, create your favorites collection, and connect with fellow food enthusiasts.</p>
         </div>
 
         {error && (
@@ -138,6 +146,17 @@ const SignupPage = () => {
             {loading ? 'Creating Account...' : 'Sign Up'}
           </button>
         </form>
+
+        <div className="features-preview">
+          <h3>What you'll get access to:</h3>
+          <ul>
+            <li>🍽️ Browse thousands of authentic Indian recipes</li>
+            <li>❤️ Save your favorite recipes</li>
+            <li>🔖 Create personalized bookmarks</li>
+            <li>👥 Join our culinary community</li>
+            <li>🗺️ Explore regional cuisines across India</li>
+          </ul>
+        </div>
 
         <div className="auth-footer">
           <p>

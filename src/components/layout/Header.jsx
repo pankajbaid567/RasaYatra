@@ -14,8 +14,12 @@ const Header = () => {
   };
 
   return (
-    <header className="header">
-      <motion.div 
+    <>
+      <a href="#main-content" className="skip-nav">
+        Skip to main content
+      </a>
+      <header className="header">
+        <motion.div 
         className="logo-container"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
@@ -83,8 +87,14 @@ const Header = () => {
         <button 
           className="mobile-menu-button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
         >
-          ☰
+          <span className="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
         </button>
       </div>
 
@@ -114,6 +124,7 @@ const Header = () => {
         </div>
       )}
     </header>
+    </>
   );
 };
 

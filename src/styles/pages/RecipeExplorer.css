@@ -39,17 +39,24 @@
 }
 
 .search-filters-container {
-  display: flex;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-4);
   align-items: center;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
+  margin-bottom: var(--fluid-space-sm);
 }
 
 .search-container {
   position: relative;
-  flex: 1;
-  min-width: 300px;
+  min-width: 0; /* Allow grid item to shrink */
+}
+
+/* Mobile: Stack vertically */
+@media (max-width: 767px) {
+  .search-filters-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
 }
 
 .search-icon {
@@ -212,8 +219,8 @@
 
 .recipes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: var(--fluid-space-md);
 }
 
 .recipe-card-wrapper {
